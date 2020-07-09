@@ -1,0 +1,274 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block title %}{{ block.super }}Segunda Semana Preparación Laboral{% endblock %}
+
+{% block styles %}
+    <link href="{% static 'tron/css/demo.css' %}" rel="stylesheet">
+    <link href="{% static 'tron/examples/team/team.css' %}" rel="stylesheet">
+    <link href="{% static 'tron/outdatedbrowser/outdatedbrowser.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block navbar-left %}
+  {% include "_navbar.html" with active_link="spl" %}
+{% endblock %}
+
+{% block container %}
+
+    <section class="demo-page padding-bottom-2x">
+      <div class="container">
+
+
+        <!-- Page Header with Breadcrumbs -->
+        <div class="page-header-with-breadcrumb">
+            <div class="page-header td">
+                <h1>Semana de Preparación Laboral<small></small></h1>
+            </div>
+            <div class="td text-right">
+                <ol class="breadcrumb">
+                    <li><a href="{% url 'home' %}">Inicio</a></li>
+                    <li><a href="{% url 'about' %}">Sobre Nosotros</a></li>
+                    <li class="active">Semana Preparación Laboral</li>
+                </ol>
+            </div>
+        </div><!-- Page Header End -->
+
+          <div class="row space-top space-bottom">
+            La <b>Semana de Preparación Laboral</b> nace con el fin de apoyar a los estudiantes y egresados de la Facultad de Ciencias Físicas y Matemáticas de la Universidad de Chile en su proceso de ingresar al mundo laboral. Consiste en una serie de actividades, como charlas, talleres, conversatorios y paneles, que buscan acompañarlos en la búsqueda de opciones y en la preparación para los actuales procesos de selección.
+          </div>
+          <!--
+          <div class="text-center space-bottom">
+            <button type="button" class="btn btn-default"><a href="{% url 'inscriptions_spl' %}">¡Para inscribirte a las actividades haz click aquí!</a></button>
+          </div>
+        -->
+         <div class="col-md-12">
+          <div class="alert alert-info text-center">Para inscribirte a las actividades <a href="{% url 'inscriptions_spl' %}">HAZ CLICK AQUÍ</a>  </div>
+        </div>
+        <br>
+          
+          <div class="row">
+          	<h3 class="block-heading">Lunes 28 de Noviembre: Cómo armar tu CV</h3>
+          </div>
+
+          <div class="row space-bottom">
+              <div class="col-sm-6">
+                <div class="panel panel-info">
+                  <!-- Default panel contents -->
+                  <div class="panel-heading">
+                    <h3 class="panel-title">¿Cómo crear tu CV?</h3>
+                  </div>
+                  <div class="panel-body small">
+                    ¿Sabías que el primer filtro de un proceso de reclutamiento es un buen CV? Entérate de los principales tips y herramientas para sacarle el mayor provecho a tu CV, partiendo así con una ventaja en tus procesos de selección.
+                  </div>
+                  <!-- List group -->
+                  <ul class="list-group small">
+                    <li class="list-group-item"><b>Expositores: </b>Javiera Lecaros Katherine Lizama – Calidad de Vida</li>
+                    <li class="list-group-item"><b>Lugar: </b>Por confirmar</li>
+                    <li class="list-group-item"><b>Horario: </b>12:00 - 13:30 hrs</li>
+                  </ul>
+                </div>
+              </div>
+
+
+
+            <div class="col-md-6">
+               <div class="panel panel-warning">
+                <!-- Default panel contents -->
+                <div class="panel-heading">
+                  <h3 class="panel-title">Taller de CV: Mejóralo en 5 minutos</h3></div>
+                <div class="panel-body small">
+                  No sabes cómo mejorar tu CV para que sea atractivo y muestre lo preciso? En este taller te daremos sugerencias en tiempo récord para que enviar un buen Currículum ya no sea un problema.
+                </div>
+                <!-- List group -->
+                <ul class="list-group small">
+                  <li class="list-group-item text-center">
+                    <p>Para esta actividad es <b>REQUISITO</b> llevar el CV impreso utilizando el formato tipo diseñado para la FCFM que puedes descargar <a href="{% url 'cv' %}">aquí</a>.</p>
+                  <button type="button" class="btn btn-sm btn-default"><a href="{% url 'cv' %}">Descargar formato tipo CV</a></button>
+                  </li>
+                  <li class="list-group-item"><b>Expositores: </b>Roberto León - Calidad de Vida</li>
+                  <li class="list-group-item"><b>Lugar: </b>Cafetería 851, Auditorio Enrique D'Etigny</li>
+                  <li class="list-group-item"><b>Horario: </b>14:00 - 15:30 hrs (Duración por alumno: 5 minutos)</li>
+                </ul>
+              </div> 
+            </div>
+
+          </div>
+
+          
+          <div class="row">
+          	<h3 class="block-heading">Martes 29 de Noviembre: Preparación de Entrevistas</h3>
+          </div>
+
+          <div class="row space-bottom">
+            <div class="col-md-6">
+                <div class="panel panel-info">
+                <!-- Default panel contents -->
+                <div class="panel-heading">
+                  <h3 class="panel-title">Charla: Preparación de Entrevista Laboral</h3></div>
+                <!-- List group -->
+                   <div class="panel-body small">
+                    Se viene una entrevista laboral y no sabes qué decir, qué preguntar o incluso cómo ir vestido. Aquí podrás saber un poco más sobre cómo prepararte frente a esta situación y así que tu entrevista resulte un completo éxito.  
+                  </div>
+                <ul class="list-group small">
+                  <li class="list-group-item"><b>Expositores: </b>Pilar Valderrama - Área de Comunicaciones</li>
+                  <li class="list-group-item"><b>Lugar: </b>Por confirmar</li>
+                  <li class="list-group-item"><b>Horario: </b>12:00 - 13:30 hrs</li>
+                </ul>                  <!-- Default panel contents -->
+                  
+                </div>
+            </div>
+
+            <div class="col-md-6">
+               <div class="panel panel-warning">
+                <!-- Default panel contents -->
+                <div class="panel-heading">
+                  <h3 class="panel-title">Taller de Entrevistas: Simula tu entrevista de trabajo</h3>
+                </div>
+                <div class="panel-body small">
+                  Siempre hay cosas que se pueden mejorar. Queremos aprovechar de ayudarte en este proceso y mostrar que aspectos generales de una entrevista cumples a cabalidad y cuales son mejorables. Atrévete a simular una entrevista laboral en 5 minutos.
+                </div>
+
+                <!-- List group -->
+                <ul class="list-group small">
+                  <li class="list-group-item"><b>Expositores: </b>Katherine Lizama (Calidad de Vida), Pilar Valderrama (Área de Comunicaciones)</li>
+                  <li class="list-group-item"><b>Lugar: </b>Cafetería 851, Auditorio Enrique D'Etigny</li>
+                  <li class="list-group-item"><b>Horario: </b>14:00 - 15:30 hrs</li>
+                </ul>
+              </div> 
+            </div>
+
+          </div>
+
+
+
+
+
+
+          <!--
+          <div class="row">
+          	<b>Charla: “Aumenta tus posibilidades profesionales al tener experiencia en el extranjero”</b>
+            <br>Expositor: Education First.
+            <br>Lugar: Sala B01
+            <br>Horario: 10:00-12:00
+            <br><br>
+          	<b>Foro: Conversatorio Internacional</b>
+            <br>Expositores: IIE y Relaciones Internacionales FCFM
+            <br>Lugar: Auditorio D'Etigny
+            <br>Horario: 14:30-16:00          
+          </div>
+          -->
+
+
+
+
+
+          
+          <div class="row">
+          	<h3 class="block-heading">Jueves 1 de Diciembre: Repetición de Talleres</h3>
+          </div>
+
+
+        <div class="row space-bottom">
+
+            <div class="col-md-6">
+               <div class="panel panel-info">
+                <!-- Default panel contents -->
+                <div class="panel-heading">
+                  <h3 class="panel-title">Taller de CV: Mejóralo en 5 minutos</h3></div>
+                <div class="panel-body small">
+                  No sabes cómo mejorar tu CV para que sea atractivo y muestre lo preciso? En este taller te daremos sugerencias en tiempo récord para que enviar un buen Currículum ya no sea un problema.
+                </div>
+                <!-- List group -->
+                <ul class="list-group small">
+                  <li class="list-group-item text-center">
+                    <p>Para esta actividad es <b>REQUISITO</b> llevar el CV impreso utilizando el formato tipo diseñado para la FCFM que puedes descargar <a href="{% url 'cv' %}">aquí</a>.</p>
+                  <button type="button" class="btn btn-sm btn-default"><a href="{% url 'cv' %}">Descargar formato tipo CV</a></button>
+                  </li>
+                  <li class="list-group-item"><b>Expositores: </b>Roberto León (Calidad de Vida), Sebastián Conde (DII)</li>
+                  <li class="list-group-item"><b>Lugar: </b>Cafetería 851, Auditorio Enrique D'Etigny</li>
+                  <li class="list-group-item"><b>Horario: </b>12:00 - 13:30 hrs (Duración por alumno: 5 minutos)</li>
+                </ul>
+              </div> 
+            </div>
+
+            <div class="col-md-6">
+               <div class="panel panel-warning">
+                <!-- Default panel contents -->
+                <div class="panel-heading">
+                  <h3 class="panel-title">Taller de Entrevistas: Simula tu entrevista de trabajo</h3>
+                </div>
+                <div class="panel-body small">
+                  Siempre hay cosas que se pueden mejorar. Queremos aprovechar de ayudarte en este proceso y mostrar que aspectos generales de una entrevista cumples a cabalidad y cuales son mejorables. Atrévete a simular una entrevista laboral en 5 minutos.
+                </div>
+
+                <!-- List group -->
+                <ul class="list-group small">
+                  <li class="list-group-item"><b>Expositores: </b>Katherine Lizama (Calidad de Vida), Pilar Valderrama (Área de Comunicaciones)</li>
+                  <li class="list-group-item"><b>Lugar: </b>Cafetería 851, Auditorio Enrique D'Etigny</li>
+                  <li class="list-group-item"><b>Horario: </b>14:00 - 15:30 hrs</li>
+                </ul>
+              </div> 
+            </div>
+
+        </div>
+
+        <!--
+          <div class="row">
+            <b>Preparación de entrevista laboral</b>
+            <br>Expositores: Pilar Valderrama – Área de Comunicaciones
+            <br>Lugar: Auditorio D'Etigny
+            <br>Horario: 10:00-12:00
+            <br><br>
+            <b>Taller de Expresión Corporal</b>
+            <br>Expositores: Larisa Michell.
+            <br>Lugar: Sala S25
+            <br>Horario: 12:00-13:30
+            <br><br>
+            <b>Speed-Dating de entrevistas laborales</b>
+            <br>Expositores: Calidad de Vida (1-2), Sebastián Conde,Ricardo Mancilla, Pilar Valderrama, Patricia Muñoz.
+            <br>Lugar: Auditorio D'Etigny
+            <br>Horario: 14:30-16:00
+          </div>
+
+
+                -->
+          
+
+        <!--
+        <div class="row space-top-2x">
+          <div class="col-md-12">
+            <div class="jumbotron">
+              <h1>¡Inscríbete!</h1>
+              <p>Todas las actividades tienen cupos limitados, no te pierdas la oportunidad de participar y prepararte para tu salto al mundo laboral.</p>
+              <p><a href="{% url 'inscriptions_spl' %}" class="btn btn-primary btn-lg" role="button">Inscríbete aquí</a></p>
+            </div>
+          </div>
+        </div>
+        -->
+
+
+
+
+
+    </div>
+    </section>
+
+{% endblock container %}
+
+{% block scripts %}
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../static/bootstrap/js/jquery.min.js"><\/script>')</script>
+<script src="{% static 'tron/js/vendor/bootstrap.min.js' %}"></script>
+<script src="{% static 'tron/js/vendor/smoothscroll.js' %}"></script>
+<script src="{% static 'tron/js/tron-ui.js' %}"></script>
+<script src="{% static 'tron/js/demo.js' %}"></script>
+<script src="{% static 'tron/outdatedbrowser/outdatedbrowser.min.js' %}"></script>
+<script src="{% static 'tron/outdatedbrowser/outdatedbrowser.init.js' %}"></script>
+
+{% endblock scripts %}

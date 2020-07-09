@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block title %}{{ block.super }}Sobre nosotros{% endblock %}
+
+{% block navbar-left %}
+  {% include "_navbar.html" with active_link="about" %}
+{% endblock %}
+
+
+
+{% block container %}
+
+    <section class="demo-page padding-bottom-2x">
+      <div class="container">
+
+
+          <!-- Page Header with Breadcrumbs -->
+      <div class="page-header-with-breadcrumb">
+        <div class="page-header td">
+          <h1>Sobre Nosotros <small>Información General</small></h1>
+        </div>
+        <div class="td text-right">
+          <ol class="breadcrumb">
+            <li><a href="{% url 'home' %}">Inicio</a></li>
+            <li class="active">Sobre Nosotros</li>
+          </ol>
+        </div>
+      </div><!-- Page Header End -->
+
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="block-heading">Feria Laboral FCFM</h3>
+            </div>
+        </div>
+          <div class="row">
+            <div class="col-md-6">
+                <p class="text-justify">La Feria Laboral FCFM de la Facultad de Ciencias Físicas y Matemáticas (FCFM) de la Universidad de Chile es una feria laboral donde tanto estudiantes como egresados de las 9 especialidades de ingeniería civil y Geología encuentran a empresas públicas y privadas, startups, fundaciones, entre otras para realizar sus prácticas profesionales, memorias de título o trabajar.</p>
+                <p class="text-justify">Hoy en día la Feria Laboral ha adquirido gran importancia al interior de la Facultad ya que desde el 2018 esta es parte de Redes Beauchef, un organismo estudiantil institucional que es parte de la Dirección de Vinculación Externa de la Facultad.</p>
+                <p class="text-justify">Redes Beauchef está conformado exclusivamente por estudiantes de la Facultad de distintas carreras impartidas en ella, por lo que tanto la Feria Laboral como otros proyectos de este organismo son planificados y ejecutados por estudiantes.</p>
+            </div>
+            <div class="col-md-6">
+                <img src="{% static 'tron/img/banner.jpg' %}" class="img-responsive img-rounded" width="100%">
+            <small class="center-block" style="text-align: center; padding: 10px;color: #959595;">XVIII Feria Empresarial realizada en Beauchef 851, Santiago.</small>
+            </div>
+        </div>
+
+        <div class="row space-top">
+          <div class="col-md-12">
+            <div class="alert alert-info text-center"><strong>La Feria Laboral FCFM se realizará los días 8, 9 y 10 de Octubre de 2018</strong></div>
+          </div>
+        </div>
+
+        <div class="row space-top space-bottom-2x">
+            <div class="col-md-6 text-center">
+                <h2>Misión</h2>
+                <p><i>“Ser la primera opción de los estudiantes de la FCFM de la UChile al momento de insertarse al mundo laboral, ya sea en empresas, instituciones u organizaciones, tanto a nivel nacional como internacional.”</i></p>
+            </div>
+            <div class="col-md-6 text-center">
+                <h2>Visión</h2>
+                <p><i>“Conectar al estudiante con el mundo laboral buscando coincidir sus necesidades con las de las empresas, instituciones u organizaciones, mediante la realización de capacitaciones que aporten a su formación profesional, la feria física y la plataforma laboral.”</i></p>
+
+            </div>
+        </div>
+
+        <div class="row">
+
+          <!-- Constraining column -->
+          <div class="col-sm-4">
+            <!-- Tile -->
+            <div class="tile">
+              <div class="thumb">
+                <div class="action">
+                  <a href="{% url 'team' %}" class="btn-outlined btn-light icon-right">Ver más <i class="fa fa-caret-right"></i></a>
+                </div>
+                <img src="{% static 'tron/img/about/equipo.jpg' %}" alt="Thumbnail">
+              </div>
+              <div class="caption">
+                <h4>¡Conoce al equipo!</h4>
+                <p>La Feria Laboral FCFM es un proyecto realizado exclusivamente por estudiantes. Conoce a nuestro equipo multidisciplinario haciendo click en la imagen.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <!-- Tile -->
+            <div class="tile">
+              <div class="thumb">
+                <div class="action">
+                  <a href="#" class="btn-outlined btn-light icon-right">Ver más <i class="fa fa-caret-right"></i></a>
+                </div>
+                <img src="{% static 'tron/img/portada1.jpg' %}" alt="Thumbnail">
+              </div>
+              <div class="caption">
+                <h4>XXI Feria Laboral</h4>
+                <p>Conoce las actividades, fechas y empresas, organizaciones e instituciones participantes.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <!-- Tile -->
+            <div class="tile">
+              <div class="thumb">
+                <div class="action">
+                  <a href="#" class="btn-outlined btn-light icon-right">Ver más <i class="fa fa-caret-right"></i></a>
+                </div>
+               <!-- <img src="{% static 'tron/img/portada2.jpg' %}" alt="Thumbnail">-->
+              </div>
+              <!--div class="caption">
+                <h4>Semana de Preparación Laboral</h4>
+                <p>Porque no somos solo un evento en octubre, te acompamos en tu búsqueda de práctica y trabajo. Conoce todo sobre la Semana de Preparación Laboral 2016.</p>
+              </div-->
+            </div>
+          </div>
+        </div>
+
+
+    </div>
+    </section>
+
+{% endblock container %}
+
+{% block scripts %}
+{% endblock scripts %}

@@ -1,0 +1,194 @@
+{% extends "base.html" %}
+<style type="text/css">
+table1 {
+   width: 100%;
+   border: 1px solid #000;
+}
+th, td {
+   width: 25%;
+   text-align: left;
+   vertical-align: top;
+   border: 1px solid #000;
+   border-collapse: collapse;
+   padding: 0.3em;
+   caption-side: bottom;
+}
+caption {
+   padding: 0.3em;
+}
+</style>
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block title %}{{ block.super }}Preguntas Frecuentes{% endblock %}
+
+{% block styles %}
+    <link href="{% static 'tron/css/demo.css' %}" rel="stylesheet">
+    <link href="{% static 'tron/examples/team/team.css' %}" rel="stylesheet">
+    <link href="{% static 'tron/outdatedbrowser/outdatedbrowser.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block navbar-left %}
+  {% include "_navbar.html" with active_link="concurso" %}
+{% endblock %}
+
+{% block container %}
+
+<section class="demo-page padding-bottom-2x">
+  <div class="container">
+
+
+    <!-- Page Header with Breadcrumbs -->
+    <div class="page-header-with-breadcrumb">
+        <div class="page-header td">
+            <h1>Preguntas Frecuentes <small></small></h1>
+        </div>
+    </div><!-- Page Header End -->
+
+      <div class="row space-top">
+        Resuelve tus dudas de manera fácil y rápida!
+        <br><br>
+        ¡Gracias por asistir a la Feria Laboral!
+
+      </div>
+      <br>          
+      <br>
+	  <div style="align:center border-color:1px solid black;">
+<table class="t">
+<tr>
+  <td class="t1"><strong>Pregunta</strong></td>
+  <td class="t1"><strong>Respuesta</strong></td>
+
+</tr>
+ 
+<tr>
+  <td class="t1">¿Cuándo es la Feria Laboral?</td>
+  <td class="t1">El 8, 9 y 10 de Octubre en Av. Beauchef 851, bajo el auditorio D’Etigny.</td>
+ 
+</tr>
+ 
+<tr>
+
+  <td class="t1">¿Cuáles son los requisitos para participar de la Feria?</td>
+  <td class="t1">Ser alumno o egresado de la Facultad de Ciencias Físicas y Matemáticas que este en busca de prácticas, memoria o empleo.</td>
+
+</tr>
+ 
+<tr>
+  
+  <td class="t1">¿Las empresas sólo buscan alumnos de pregrado?</td>
+  <td>No necesariamente. Dependiendo de la empresa, también pueden buscar alumnos egresados para empleos.</td>
+
+</tr>
+<tr>
+  
+  <td class="t1">¿La Feria es solo para estudiantes de la FCFM?</td>
+  <td class="t1">Si, la feria es de alumnos y para alumnos de la FCFM.</td>
+ 
+</tr>
+ 
+<tr>
+  
+  <td class="t1">¿Para qué carreras y tipo de trabajo está enfocada la feria?</td>
+  <td class="t1">La Feria Laboral está enfocada para todas las carreras de la Facultad, por lo que puedes encontrar practicas o empleos para las especialidades de ingeniería civil, licenciaturas y geología.</td>
+
+</tr>
+ 
+<tr>
+  <td class="t1">¿Cómo debo ir vestido a mi entrevista?</td>
+  <td class="t1">No existe un código de vestimenta que se deba seguir, solo debes preocuparte de ir cómodo.</td>
+
+</tr>
+<tr>
+  <td class="t1">¿Cómo sé qué empresas vienen y que trabajos ofrecen?</td>
+  <td class="t1">Las empresas e instituciones confirmadas son publicadas a través de nuestras redes sociales.</td>
+ 
+</tr>
+ 
+<tr>
+  <td class="t1">¿Hay sólo empresas privadas en la feria?</td>
+  <td class="t1">No, además de las empresas privadas, también participan instituciones públicas, ONG’s y emprendimientos que se harán participes de esta nueva versión de la Feria. </td>
+
+</tr>
+ 
+<tr>
+  <td class="t1">¿Cómo hago para reservar una entrevista con alguna empresa?</td>
+  <td class="t1">Debes ingresar a http://www.feriaempresarial.cl/reservas/  y reservar con la empresa que desees. Recuerda ser consciente a la hora de reservar las entrevistas fijándote en el horario y la cantidad de reservas.</td>
+
+</tr>
+<tr>
+  <td class="t1">¿Con cuánta anticipación debo entrar a la Feria antes de mi entrevista?</td>
+  <td class="t1">Se recomienda que llegues al menos con 20 minutos de anticipación, puesto que primero debes acreditarte en la entrada y posteriormente anunciar la llegada a la empresa de tu entrevista. </td>
+ 
+</tr>
+ 
+<tr>
+  <td class="t1">¿Si soy egresado, puedo igual entrevistarme en la Feria?</td>
+  <td class="t1">Si, este evento es para encontrar además de prácticas y memorias, oportunidades laborales part-time o full-time.</td>
+
+</tr>
+ 
+<tr>
+  <td class="t1">¿Qué prácticas puedo conseguir?</td>
+  <td  class="t1">Dependiendo de la empresa, puedes conseguir practica I, II o III. Se ira informado mediante las RRSS acerca de los cupos que tendrán las empresas y a que corresponderán.</td>
+
+</tr>
+<tr>
+  <td class="t1">¿Cuántas entrevistas puedo agendar?</td>
+  <td class="t1">No existe un limite de entrevistas que puedas reservar, pero si un limite diario correspondiente a 2 reservas.</td>
+ 
+</tr>
+ 
+<tr>
+  <td class="t1">¿Puedo ir a la Feria a entrevistar sin haber agendado antes?</td>
+  <td class="t1">Si puedes, pero no existe seguridad de que consigas entrevista. Para ello deberás inscribirte en la lista de espera de una entrevista y en caso de se libere ese horario correrá la lista. Recuerda siempre andar con tu CV impreso.</td>
+
+</tr>
+ 
+<tr>
+  <td class="t1">¿Puedo ir a dejar mi CV a las empresas sin entrevistarme?</td>
+  <td class="t1">Si, puedes ir a dejar tu CV a todas las empresas que desees sin necesidad de entrevista.</td>
+
+</tr>
+<tr>
+  <td class="t1">¿Qué son los asistentes de instituciones y que beneficios tiene?</td>
+  <td class="t1">Los asistentes son alumnos que reciben y acompañan a las instituciones durante el día en que están en la Feria, teniendo relación directa con los invitados, ayudándolos a administrar las entrevistas y presentar a los entrevistados. Los beneficios de ser asistente son que podrás escoger la institución de la cual desees ser asistente, tendrás la opción de compartir el desayuno, el almuerzo y la jornada en general con los representantes de tu institución asignada, ampliando tu red de contactos los cuales pueden ser claves a la hora de conseguir alguna práctica o trabajo y disfrutarás de todos los beneficios y sorpresas que tendrá la Feria Laboral FCFM gracias a sus auspiciadores. 
+Las postulaciones aún están abiertas en http://www.feriaempresarial.cl/asistentes/.</td>
+ 
+</tr>
+ 
+<tr>
+  <td class="t1">¿La Feria se desarrolla solo en octubre?</td>
+  <td class="t1">La Feria como tal solo está el 8,9 y 10 de octubre, pero durante el año se hacen Charlas con empresas para distintas especialidades y además se van publicando ofertas laborales a través de redes sociales y de la plataforma laboral http://www.feriaempresarial.cl/pl/</td>
+
+</tr>
+ 
+<tr>
+  <td class="t1">¿Tienes más dudas?</td>
+  <td class="t1">¡Contáctanos! Puedes escribirnos mediante redes sociales o a  contacto@feriaempresarial.cl</td>
+  
+</tr>
+
+</table>
+						 
+ </div>
+
+      <!-- BEGIN Podio web form -->
+    <!--  <script src="https://podio.com/webforms/16870631/1134292.js"></script>
+      <script type="text/javascript">
+        _podioWebForm.render("1134292")
+      </script>
+      <noscript>
+        <a href="https://podio.com/webforms/16870631/1134292" target="_blank">Por favor, rellena el formulario</a>
+      </noscript>
+        
+      <!-- END Podio web form -->
+
+
+  </div>
+</section>
+
+{% endblock container %}
+
+{% block scripts %}
+{% endblock scripts %}

@@ -1,0 +1,602 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block title %}{{ block.super }}Equipo{% endblock %}
+
+{% block styles %}
+    <link href="{% static 'tron/css/demo.css' %}" rel="stylesheet">
+    <link href="{% static 'tron/examples/team/team.css' %}" rel="stylesheet">
+    <link href="{% static 'tron/outdatedbrowser/outdatedbrowser.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block navbar-left %}
+  {% include "_navbar.html" with active_link="team" %}
+{% endblock %}
+
+
+{% block container %}
+
+<!-- Container -->
+<section class="demo-page padding-bottom-2x">
+    <div class="container">
+
+        <!-- Page Header with Breadcrumbs -->
+        <div class="page-header-with-breadcrumb">
+            <div class="page-header td">
+                <h1>Equipo <small>Equipo Multidisciplinario de la Feria Laboral FCFM</small></h1>
+            </div>
+            <div class="td text-right">
+                <ol class="breadcrumb">
+                    <li><a href="{% url 'home' %}">Inicio</a></li>
+                    <li><a href="{% url 'about' %}">Sobre Nosotros</a></li>
+                    <li class="active">Equipo</li>
+                </ol>
+            </div>
+        </div><!-- Page Header End --
+
+        <div class="row">
+            <div class="col-md-12 text-justify">
+                El equipo de la Feria Empresarial está integrado por 37 estudiantes de las diversas carreras de la Escuela de Ingeniería y Ciencias, además de dos diseñadores. Este equipo multidisciplinario, organizado en 4 áreas, trabaja durante todo el año para ofrecer los mejores servicios tanto a empresas como a sus alumnos.
+            </div>
+        </div>
+
+      <!-- Block Header -->
+      <div class="page-header text-center">
+        <h2>Directorio</h2>
+      </div><!-- Block Header End -->
+
+      <!-- Content -->
+      <div class="row space-top">
+        <div class="col-sm-4">
+          <div class="thumbnail with-caption">
+            <img src="{% static 'tron/img/team/ignacia-caamano.JPG' %}" alt="Maria Ignacia Caamaño">
+            <div class="caption">
+              <h4>Maria Ignacia Caamaño</h4>
+              <span class="text-muted" style="font-size:15px;">Directora General</span>
+              <p>Tesista, Ingeniería Civil Industrial.</p>
+              <div class="social-buttons">
+                <a href="mailto:ignacia.caamano@feriaempresarial.cl" class="social-btn sb-email sb-sm"><i class="fa fa-envelope"></i></a>
+               
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="thumbnail with-caption">
+			<img src="{% static 'tron/img/team/simon-amigo.JPG' %}" alt="Simón Amigo">
+            <div class="caption">
+              <h4>Simón Amigo</h4>
+              <span class="text-muted" style="font-size:15px;">Director Área Comercial</span>
+              <p>Estudiante 5to año, Ingeniería Civil.</p>
+              <div class="social-buttons">
+                <a href="mailto:simon.amigo@feriaempresarial.cl" class="social-btn sb-email sb-sm"><i class="fa fa-envelope"></i></a>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="thumbnail with-caption">
+            <img src="{% static 'tron/img/team/default.png' %}" width='230'  alt="Pablo Sarmiento">
+            <div class="caption">
+              <h4>Pablo Sarmiento</h4>
+              <span class="text-muted" style="font-size:15px;">Director Área Finanzas</span>
+              <p>Estudiante 6to año, Ingeniería Civil Industrial.</p>
+              <div class="social-buttons">
+                <a href="mailto:pablo.sarmiento@feriaempresarial.cl" class="social-btn sb-email sb-sm"><i class="fa fa-envelope"></i></a>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row space-top">
+        <div class="col-sm-4">
+          <div class="thumbnail with-caption">
+            <img src="{% static 'tron/img/team/daniela-quintanilla.JPG' %}" alt="Daniela Quintanilla">
+            <div class="caption">
+              <h4>Daniela Quintanilla</h4>
+              <span class="text-muted" style="font-size:15px;">Directora Área Logística</span>
+              <p>Estudiante 4to año, Ingeniería Civil Industrial.</p>
+              <div class="social-buttons">
+                <a href="mailto:daniela.quintanilla@feriaempresarial.cl" class="social-btn sb-email sb-sm"><i class="fa fa-envelope"></i></a>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="thumbnail with-caption">
+            <img src="{% static 'tron/img/team/camila-olguin.JPG' %}" alt="Camila Olguín">
+            <div class="caption">
+              <h4>Camila Olguín</h4>
+              <span class="text-muted" style="font-size:15px;">Directora Área Marketing</span>
+              <p>Estudiante 5to año, Ingeniería Civil Industrial.</p>
+              <div class="social-buttons">
+                <a href="mailto:camila.olguin@feriaempresarial.cl" class="social-btn sb-email sb-sm"><i class="fa fa-envelope"></i></a>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="thumbnail with-caption">
+            <img src="{% static 'tron/img/team/nicolas-lafuente.JPG' %}" alt="Nicolás La Fuente">
+            <div class="caption">
+              <h4>Nicolás La Fuente</h4>
+              <span class="text-muted" style="font-size:15px;">Director Área TI</span>
+              <p>Estudiante 6to año, Ingeniería Civil Industrial.</p>
+              <div class="social-buttons">
+                <a href="mailto:nicolas.lafuente@feriaempresarial.cl" class="social-btn sb-email sb-sm"><i class="fa fa-envelope"></i></a>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+  <!-- ÁREA COMERCIAL -->
+      <div class="page-header text-center">
+        <h2>Área Comercial<small>9 estudiantes forman parte del Área Comercial</small></h2>
+      </div>
+    <!-- Block Header End -->
+      <div class="row">
+        <div class="col-sm-4 col-md-3">
+          <div class="team-member">
+            <img class="thumb img-circle" src="{% static 'tron/img/team/magdalena-badal.JPG' %}" alt="Magdalena Badal">
+            <h4>Magdalena Badal</h4>
+            <span class="text-muted">Ejecutiva Comercial</span>
+            <p>Estudiante 5to año, Ingeniería Civil Industrial.</p>
+            <div class="social-buttons">
+                <a href="mailto:magdalena.badal@feriaempresarial.cl" class="social-btn sb-email sb-sm"><i class="fa fa-envelope"></i></a>
+                
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 col-md-3">
+          <div class="team-member">
+            <img class="thumb img-circle" src="{% static 'tron/img/team/martin-bustamante.JPG' %}" alt="Martín Bustamante">
+            <h4>Martín Bustamante</h4>
+            <span class="text-muted">Ejecutivo Comercial</span>
+            <p>Estudiante 5to año, Ingeniería Civil Industrial.</p>
+            <div class="social-buttons">
+                <a href="mailto:martin.bustamante@feriaempresarial.cl" class="social-btn sb-email sb-sm"><i class="fa fa-envelope"></i></a>
+                
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 col-md-3">
+          <div class="team-member">
+            <img class="thumb img-circle" src="{% static 'tron/img/team/nicolas-diaz.JPG' %}" alt="Nicolás Díaz">
+            <h4>Nicolás Díaz</h4>
+            <span class="text-muted">Ejecutivo Comercial</span>
+            <p>Estudiante 4to año, Ingeniería Civil Mecánica.</p>
+            <div class="social-buttons">
+                <a href="mailto:nicolas.diaz@feriaempresarial.cl" class="social-btn sb-email sb-sm"><i class="fa fa-envelope"></i></a>
+                
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 col-md-3">
+          <div class="team-member">
+            <img class="thumb img-circle" src="{% static 'tron/img/team/natalia-gonzalez.JPG' %}" alt="Natalia González">
+            <h4>Natalia González</h4>
+            <span class="text-muted">Ejecutiva Comercial</span>
+            <p>Estudiante 4to año, Ingeniería Civil Industrial.</p>
+            <div class="social-buttons">
+                <a href="mailto:natalia.gonzalez@feriaempresarial.cl" class="social-btn sb-email sb-sm"><i class="fa fa-envelope"></i></a>
+                
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-4 col-md-3">
+          <div class="team-member">
+            <img class="thumb img-circle" src="{% static 'tron/img/team/santiago-herrera.JPG' %}" alt="Santiago Herrera">
+            <h4>Santiago Herrera</h4>
+            <span class="text-muted">Ejecutivo Comercial</span>
+            <p>Estudiante 5to año, Ingeniería Civil Industrial.</p>
+            <div class="social-buttons">
+                <a href="mailto:santiago.herrera@feriaempresarial.cl" class="social-btn sb-email sb-sm"><i class="fa fa-envelope"></i></a>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 col-md-3">
+          <div class="team-member">
+            <img class="thumb img-circle" src="{% static 'tron/img/team/vicente-labbe.JPG' %}" alt="Vicente Labbé">
+            <h4>Vicente Labbé</h4>
+            <span class="text-muted">Ejecutivo Comercial</span>
+            <p>Estudiante 4to año, Ingeniería Civil Mecánica.</p>
+            <div class="social-buttons">
+                <a href="mailto:vicente.labbe@feriaempresarial.cl" class="social-btn sb-email sb-sm"><i class="fa fa-envelope"></i></a>
+                
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 col-md-3">
+          <div class="team-member">
+            <img class="thumb img-circle" src="{% static 'tron/img/team/pablo-lastra.JPG' %}" alt="Pablo Lastra">
+            <h4>Pablo Lastra</h4>
+            <span class="text-muted">Ejecutivo Comercial</span>
+            <p>Estudiante 4to año, Ingeniería Civil Industrial.</p>
+            <div class="social-buttons">
+                <a href="mailto:pablo.lastra@feriaempresarial.cl" class="social-btn sb-email sb-sm"><i class="fa fa-envelope"></i></a>
+                
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 col-md-3">
+          <div class="team-member">
+            <img class="thumb img-circle" src="{% static 'tron/img/team/jose-riffo.JPG' %}" alt="José Riffo">
+            <h4>José Riffo</h4>
+            <span class="text-muted">Ejecutivo Comercial</span>
+            <p>Estudiante 6to año, Ingeniería Civil Industrial e Ingeniería Civil Mecánica.</p>
+            <div class="social-buttons">
+                <a href="mailto:jose.riffo@feriaempresarial.cl" class="social-btn sb-email sb-sm"><i class="fa fa-envelope"></i></a>
+                
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-4 col-md-3">
+          <div class="team-member">
+            <img class="thumb img-circle" src="{% static 'tron/img/team/romina-vidal.JPG' %}" alt="Romina Vidal">
+            <h4>Romina Vidal</h4>
+            <span class="text-muted">Ejecutiva Comercial</span>
+            <p>Estudiante 4to año, Ingeniería Civil Industrial.</p>
+            <div class="social-buttons">
+                <a href="mailto:romina.vidal@feriaempresarial.cl" class="social-btn sb-email sb-sm"><i class="fa fa-envelope"></i></a>
+                
+            </div>
+          </div>
+        </div>
+        <!--div class="col-sm-4 col-md-3">
+          <div class="team-member">
+            <img class="thumb img-circle" src="{% static 'tron/examples/team/img/img01.png' %}" alt="Angela Williams">
+            <h4>Gabriela Soto</h4>
+            <span class="text-muted">Ejecutiva Comercial</span>
+            <p>Estudiante 5to año, Geología.</p>
+            <div class="social-buttons">
+                <a href="mailto:gabriela.soto@feriaempresarial.cl" class="social-btn sb-email sb-sm"><i class="fa fa-envelope"></i></a>
+                <a href="#" target="_blank" class="social-btn sb-linkedin sb-sm"><i class="fa fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 col-md-3">
+          <div class="team-member">
+            <img class="thumb img-circle" src="{% static 'tron/img/team/vasquez-maria.jpg' %}" alt="María José Vasquez">
+            <h4>María José Vasquez</h4>
+            <span class="text-muted">Ejecutiva Comercial</span>
+            <p>Estudiante 4to año, Ingeniería Civil Industrial.</p>
+            <div class="social-buttons">
+                <a href="mailto:maria.jose.vasquez@feriaempresarial.cl" class="social-btn sb-email sb-sm"><i class="fa fa-envelope"></i></a>
+                <a href="#" target="_blank" class="social-btn sb-linkedin sb-sm"><i class="fa fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 col-md-3">
+
+        </div-->
+      </div>
+	  
+<!-- ÁREA DATOS -->
+      <div class="page-header text-center">
+        <h2>Área Datos<small>1 estudiante forma parte del Área Datos</small></h2>
+      </div>
+	  
+      <div class="row">
+        <div class="col-sm-4 col-md-3">
+          <div class="team-member">
+            <img class="thumb img-circle" src="{% static 'tron/img/team/carolina-mondaca.JPG' %}" alt="Carolina Mondaca">
+            <h4>Carolina Mondaca</h4>
+            <span class="text-muted">Analista</span>
+            <p>Estudiante 5to año, Ingeniería Civil Industrial.</p>
+            <div class="social-buttons">
+                <a href="mailto:carolina.mondaca@feriaempresarial.cl" class="social-btn sb-email sb-sm"><i class="fa fa-envelope"></i></a>
+                
+            </div>
+          </div>
+        </div>
+      </div>
+<!-- ÁREA Finanzas -->
+      <div class="page-header text-center">
+        <h2>Área Finanzas<small>1 estudiante forma parte del Área Finanzas</small></h2>
+      </div>
+	  
+      <div class="row">
+        <div class="col-sm-4 col-md-3">
+          <div class="team-member">
+            <img class="thumb img-circle" src="{% static 'tron/img/team/pablo-troncoso.JPG' %}" alt="Pablo Troncoso">
+            <h4>Pablo Troncoso</h4>
+            <span class="text-muted">Ejecutivo Finanzas</span>
+            <p>Estudiante 4to año, Ingeniería Civil Eléctrica.</p>
+            <div class="social-buttons">
+                <a href="mailto:pablo.troncoso@feriaempresarial.cl" class="social-btn sb-email sb-sm"><i class="fa fa-envelope"></i></a>
+                
+            </div>
+          </div>
+        </div>
+      </div>
+<!-- ÁREA LOGÍSTICA -->
+      <div class="page-header text-center">
+        <h2>Área Logística<small>4 estudiantes forman parte del Área Logística</small></h2>
+      </div>
+    <!-- Block Header End -->
+      <div class="row">
+        <div class="col-sm-4 col-md-3">
+          <div class="team-member">
+            <img class="thumb img-circle" src="{% static 'tron/img/team/fernando-arenas.JPG' %}" alt="Fernando Arenas">
+            <h4>Fernando Arenas</h4>
+            <span class="text-muted">Ejecutivo Logística</span>
+            <p>Tesista, Ingeniería Civil Química.</p>
+            <div class="social-buttons">
+                <a href="mailto:fernando.arenas@feriaempresarial.cl" class="social-btn sb-email sb-sm"><i class="fa fa-envelope"></i></a>
+                
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 col-md-3">
+          <div class="team-member">
+            <img class="thumb img-circle" src="{% static 'tron/img/team/carlos-gallardo.JPG' %}" alt="Carlos Gallardo">
+            <h4>Carlos Gallardo</h4>
+            <span class="text-muted">Ejecutivo Logística</span>
+            <p>Estudiante 4to año, Ingeniería Civil Industrial.</p>
+            <div class="social-buttons">
+                <a href="mailto:carlos.gallardo@feriaempresarial.cl" class="social-btn sb-email sb-sm"><i class="fa fa-envelope"></i></a>
+                
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 col-md-3">
+          <div class="team-member">
+            <img class="thumb img-circle" src="{% static 'tron/img/team/azucena-orellana.JPG' %}" alt="Azucena Orellana">
+            <h4>Azucena Orellana</h4>
+            <span class="text-muted">Ejecutiva Logística</span>
+            <p>Estudiante 5to año, Ingeniería Civil Industrial.</p>
+            <div class="social-buttons">
+                <a href="mailto:azucena.orellana@feriaempresarial.cl" class="social-btn sb-email sb-sm"><i class="fa fa-envelope"></i></a>
+                
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 col-md-3">
+          <div class="team-member">
+            <img class="thumb img-circle" src="{% static 'tron/img/team/francisco-vasquez.JPG' %}" alt="Francisco Vásquez">
+            <h4>Francisco Vásquez</h4>
+            <span class="text-muted">Ejecutivo Logística</span>
+            <p>Estudiante 5to año, Ingeniería Civil Matemática.</p>
+            <div class="social-buttons">
+                <a href="mailto:francisco.vasquez@feriaempresarial.cl" class="social-btn sb-email sb-sm"><i class="fa fa-envelope"></i></a>
+                
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--div class="row">
+        <div class="col-sm-4 col-md-3">
+          <div class="team-member">
+            <img class="thumb img-circle" src="{% static 'tron/examples/team/img/img01.png' %}" alt="James Lewis">
+            <h4>Matías Molina</h4>
+            <span class="text-muted">Ejecutivo Logística</span>
+            <p>Estudiante 6to año, Ingeniería Civil Industrial.</p>
+            <div class="social-buttons">
+                <a href="mailto:matias.molina@feriaempresarial.cl" class="social-btn sb-email sb-sm"><i class="fa fa-envelope"></i></a>
+                <a href="https://cl.linkedin.com/in/matmolina" target="_blank" class="social-btn sb-linkedin sb-sm"><i class="fa fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 col-md-3">
+
+        </div>
+        <div class="col-sm-4 col-md-3">
+
+        </div>
+        <div class="col-sm-4 col-md-3">
+
+        </div>
+      </div>
+
+
+<!-- ÁREA MARKETING -->
+      <div class="page-header text-center">
+        <h2>Área Marketing<small>5 estudiantes forman parte del Área Marketing</small></h2>
+      </div>
+    <!-- Block Header End -->
+      <div class="row">
+        <div class="col-sm-4 col-md-3">
+          <div class="team-member">
+            <img class="thumb img-circle" src="{% static 'tron/img/team/alejandro-campusano.JPG' %}" alt="Alejandro Campusano">
+            <h4>Alejandro Campusano</h4>
+            <span class="text-muted">Ejecutivo Marketing</span>
+            <p>Estudiante 5to año, Ingeniería Civil Química.</p>
+            <div class="social-buttons">
+                <a href="mailto:alejandro.campusano@feriaempresarial.cl" class="social-btn sb-email sb-sm"><i class="fa fa-envelope"></i></a>
+                
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 col-md-3">
+          <div class="team-member">
+            <img class="thumb img-circle" src="{% static 'tron/img/team/javiera-dona.JPG' %}" alt="Javiera Doña">
+            <h4>Javiera Doña</h4>
+            <span class="text-muted">Ejecutiva Marketing</span>
+            <p>Estudiante 4to año, Ingeniería Civil Industrial.</p>
+            <div class="social-buttons">
+                <a href="mailto:javiera.dona@feriaempresarial.cl" class="social-btn sb-email sb-sm"><i class="fa fa-envelope"></i></a>
+                
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 col-md-3">
+          <div class="team-member">
+            <img class="thumb img-circle" src="{% static 'tron/img/team/patricio-ortiz.JPG' %}" alt="Patricio Ortíz">
+            <h4>Patricio Ortíz</h4>
+            <span class="text-muted">Ejecutivo Marketing</span>
+            <p>Estudiante 3er año, Ingeniería Civil Industrial.</p>
+            <div class="social-buttons">
+                <a href="mailto:patricio.ortiz@feriaempresarial.cl" class="social-btn sb-email sb-sm"><i class="fa fa-envelope"></i></a>
+                
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 col-md-3">
+          <div class="team-member">
+            <img class="thumb img-circle" src="{% static 'tron/img/team/default.png' %}" height='180' alt="Mario Pérez">
+            <h4>Mario Pérez</h4>
+            <span class="text-muted">Ejecutivo Marketing</span>
+            <p>Estudiante 5to año, Ingeniería Civil Industrial.</p>
+            <div class="social-buttons">
+                <a href="mailto:diego.medina@feriaempresarial.cl" class="social-btn sb-email sb-sm"><i class="fa fa-envelope"></i></a>
+                
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-4 col-md-3">
+          <div class="team-member">
+            <img class="thumb img-circle" src="{% static 'tron/img/team/default.png' %}" height='180' alt="Benjamín Venegas">
+            <h4>Benjamín Venegas</h4>
+            <span class="text-muted">Diseñador</span>
+            <p></p>
+            <div class="social-buttons">
+                <a href="mailto:alberto.perez@feriaempresarial.cl" class="social-btn sb-email sb-sm"><i class="fa fa-envelope"></i></a>
+                
+            </div>
+          </div>
+        </div>
+        <!--div class="col-sm-4 col-md-3">
+         <div class="team-member">
+            <img class="thumb img-circle" src="{% static 'tron/examples/team/img/img01.png' %}" alt="James Lewis">
+            <h4>Dafne Pincheira</h4>
+            <span class="text-muted">Ejecutiva Marketing</span>
+            <p>Estudiante 5to año, Ingeniería Civil Industrial.</p>
+            <div class="social-buttons">
+                <a href="mailto:dafne.pincheira@feriaempresarial.cl" class="social-btn sb-email sb-sm"><i class="fa fa-envelope"></i></a>
+                <a href="https://cl.linkedin.com/in/dafne-pincheira-santana-997656a2" target="_blank" class="social-btn sb-linkedin sb-sm"><i class="fa fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 col-md-3">
+          <div class="team-member">
+            <img class="thumb img-circle" src="{% static 'tron/img/team/sepulveda-mauricio.jpg' %}" alt="Mauricio Sepúlveda">
+            <h4>Mauricio Sepúlveda</h4>
+            <span class="text-muted">Ejecutivo Marketing</span>
+            <p>Estudiante 4to año, Ingeniería Civil Industrial.</p>
+            <div class="social-buttons">
+                <a href="mailto:mauricio.sepulveda@feriaempresarial.cl" class="social-btn sb-email sb-sm"><i class="fa fa-envelope"></i></a>
+                <a href="#" target="_blank" class="social-btn sb-linkedin sb-sm"><i class="fa fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 col-md-3">
+          <div class="team-member">
+            <img class="thumb img-circle" src="{% static 'tron/examples/team/img/img01.png' %}" alt="James Lewis">
+            <h4>Martín Tapia</h4>
+            <span class="text-muted">Ejecutivo Marketing</span>
+            <p>Estudiante 6to año, Ingeniería Civil Industrial.</p>
+            <div class="social-buttons">
+                <a href="mailto:martin.tapia@feriaempresarial.cl" class="social-btn sb-email sb-sm"><i class="fa fa-envelope"></i></a>
+                <a href="https://cl.linkedin.com/in/martin-andres-tapia-id-43704640" target="_blank" class="social-btn sb-linkedin sb-sm"><i class="fa fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div-->
+      </div>
+
+
+
+<!-- ÁREA TI -->
+      <div class="page-header text-center">
+        <h2>Área TI<small>3 estudiantes forman parte del Área TI</small></h2>
+      </div>
+    <!-- Block Header End -->
+      <div class="row">
+		<div class="col-sm-4 col-md-3">
+          <div class="team-member">
+            <img class="thumb img-circle" src="{% static 'tron/img/team/gabriel-iturra.JPG' %}" alt="Gabriel Iturra">
+            <h4>Gabriel Iturra</h4>
+            <span class="text-muted">Ejecutivo TI</span>
+            <p>Estudiante 4to año, Ingeniería Civil en Computación.</p>
+            <div class="social-buttons">
+                <a href="mailto:gabriel.iturra@feriaempresarial.cl" class="social-btn sb-email sb-sm"><i class="fa fa-envelope"></i></a>
+                
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 col-md-3">
+          <div class="team-member">
+            <img class="thumb img-circle" src="{% static 'tron/img/team/default.png' %}" height='180' alt="Matías Mayer">
+            <h4>Matías Mayer</h4>
+            <span class="text-muted">Ejecutivo TI</span>
+            <p>Estudiante 6to año, Ingeniería Civil Industrial.</p>
+            <div class="social-buttons">
+                <a href="mailto:matias.mayer@feriaempresarial.cl" class="social-btn sb-email sb-sm"><i class="fa fa-envelope"></i></a>
+                
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 col-md-3">
+          <div class="team-member">
+            <img class="thumb img-circle" src="{% static 'tron/img/team/matias-moscoso.JPG' %}" alt="Matías Moscoso">
+            <h4>Matías Moscoso</h4>
+            <span class="text-muted">Ejecutivo TI</span>
+            <p>Estudiante 6to año, Ingeniería Civil Industrial.</p>
+            <div class="social-buttons">
+                <a href="mailto:matias.moscoso@feriaempresarial.cl" class="social-btn sb-email sb-sm"><i class="fa fa-envelope"></i></a>
+                
+            </div>
+          </div>
+        </div>
+        <!--div class="col-sm-4 col-md-3">
+          <div class="team-member">
+            <img class="thumb img-circle" src="{% static 'tron/img/team/venegas-matias.jpg' %}" alt="Matías Venegas">
+            <h4>Matías Venegas</h4>
+            <span class="text-muted">Ejecutivo TI</span>
+            <p>Estudiante 5to año, Ingeniería Civil Industrial.</p>
+            <div class="social-buttons">
+                <a href="mailto:matias.venegas@feriaempresarial.cl" class="social-btn sb-email sb-sm"><i class="fa fa-envelope"></i></a>
+                <a href="https://cl.linkedin.com/in/matiasvenegas" target="_blank" class="social-btn sb-linkedin sb-sm"><i class="fa fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+<!-- Content End --
+
+        <div class="row space-top-2x">
+          <div class="col-md-12">
+            <div class="jumbotron">
+              <h2>¿Quieres ser parte del equipo?</h2>
+              <p>Las postulaciones se abrirán en noviembre-diciembre. ¡Siguenos en nuestras redes sociales para no perderte la oportunidad!</p>
+            </div>
+          </div>
+        </div>
+
+    </div>
+</section>
+    <!-- Container End -->
+
+
+
+{% endblock container %}
+
+{% block scripts %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../static/bootstrap/js/jquery.min.js"><\/script>')</script>
+<script src="{% static '/tron/js/vendor/bootstrap.min.js' %}"></script>
+<script src="{% static '/tron/js/vendor/smoothscroll.js' %}"></script>
+<script src="{% static '/tron/js/tron-ui.js' %}"></script>
+<script src="{% static '/tron/js/demo.js' %}"></script>
+<script src="{% static '/tron/outdatedbrowser/outdatedbrowser.min.js' %}"></script>
+<script src="{% static '/tron/outdatedbrowser/outdatedbrowser.init.js' %}"></script>
+{% endblock scripts %}

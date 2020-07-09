@@ -1,0 +1,275 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block title %}{{ block.super }}Sobre nosotros{% endblock %}
+
+{% block navbar-left %}
+  {% include "_navbar.html" with active_link="feria2016" %}
+{% endblock %}
+
+
+
+{% block container %}
+
+    <section class="demo-page padding-bottom-2x">
+      <div class="container">
+
+
+          <!-- Page Header with Breadcrumbs -->
+      <div class="page-header-with-breadcrumb">
+        <div class="page-header td">
+          <h1>Feria Laboral FCFM <small>8, 9 y 10 de Octubre de 2018</small></h1>
+        </div>
+        <div class="td text-right">
+          <ol class="breadcrumb">
+            <li><a href="{% url 'home' %}">Inicio</a></li>
+            <li><a href="{% url 'about' %}">Sobre Nosotros</a></li>
+            <li class="active">Feria Laboral FCFM</li>
+          </ol>
+        </div>
+      </div><!-- Page Header End -->
+
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="block-heading">Información General</h3>
+            </div>
+        </div>
+          <div class="row">
+            <div class="col-md-6 text-justify">
+                <p>La <strong>Feria Laboral FCFM</strong> se llevará a cabo los días <strong>8, 9 y 10 de Octubre de 2018</strong>, de <strong>9:00 a 17:30 hrs</strong>, bajo el Auditorio d'Etigny en Beauchef 851.</p>
+                <p>Este año volvemos a incluir los aspectos de <strong>emprendimiento e innovación tecnológica</strong>, los cuales se ubicarán dentro de la explanada de Beauchef 851. ¡Ven a conocer emprendimientos e incubadoras y las oportunidades que existen para ti!</p>
+                <p>Las puertas de nuestro evento están <i>abiertas</i> para que nos visites, ¡te esperamos! Ven a conocer a las empresas, organizaciones e instituciones invitadas.</p>
+            </div>
+            <div class="col-md-6">
+              <img src="{% static 'tron/img/banner.jpg' %}" class="img-responsive img-rounded" width="100%">
+              <small class="center-block" style="text-align: center; padding: 10px;color: #959595;">XXI Feria Laboral realizada en Beauchef 851, Santiago.</small>
+            </div>
+        </div>
+
+       <!-- <div class="row space-top">
+          <div class="col-md-6">
+
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <h3 class="panel-title">2, 3 y 4 de Octubre</h3>
+              </div>
+              <div class="panel-body">
+                <p>Los días 2, 3 y 4 de Octubre tendremos a 40 empresas participantes y 12 organizaciones, donde se realizarán entrevistas con previa inscripción.</p>
+                <p>Codelco, Ministerio de Obras Públicas y Prácticas Chile <u>no</u> realizarán entrevistas. Acercate a su stand para conocer las oportunidades que existen para tí.</p>
+                <p><i>¿No alcanzaste a reservar entrevista? ¡No te preocupes! Habrá lista de espera durante el mismo evento, asiste con tu CV e inscríbete.</i></p>
+                <div class="text-center">
+                  <div class="btn-group btn-group-sm buttons-demo">
+                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#Cronograma">Cronograma</button>
+                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#Mapa">Mapa</button>
+                    <button type="button" class="btn btn-default"><a href="http://www.feriaempresarial.cl/reservas/">Reservas de entrevistas</a></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div> 
+
+          <div class="col-md-6">
+            <div class="panel panel-danger">
+              <div class="panel-heading">
+                <h3 class="panel-title">6 de octubre</h3>
+              </div>
+              <div class="panel-body">
+                <p>El día 6 de octubre estará enfocado en <b>Emprendimiento e Innovación Tecnológica</b>. Ven a conocer 28 emprendimientos e incubadoras y las oportunidad que tienen para tí. Este día no funcionará con entrevistas agendadas, sólo lleva tu CV impreso y acércate a conversar con los emprendimientos que te interesan.</p>
+                <p>Este año contamos con la ayuda de <b>Open Lab</b>, <b>Socialab</b>, <b>Start-Up Chile</b> y <b>Laboratorio de Gobierno</b>.
+                <div class="text-center">
+                  <div class="btn-group btn-group-sm buttons-demo">
+                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#Cronograma4">Cronograma 6 de octubre</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          
+        </div>
+
+
+
+
+
+
+            <!-- Modal: Cronograma -->
+            <div class="modal fade" id="Cronograma" tabindex="-1" data-backdrop="static" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h4 class="modal-title" id="myModalLabel">Cronograma Feria Laboral FCFM</h4>
+                        </div>
+
+                        <div class="modal-body">
+                            <div class="tron-example table-responsive">
+                                <table class="table table-striped table-condensed">
+                                    <thead>
+                                        <tr>
+                                            <th>Horario</th>
+                                            <th>Actividades</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>09:00 - 11:00</td>
+                                            <td>Primer bloque de entrevistas</td>
+                                        </tr>
+                                        <tr>
+                                            <td>11:00 - 11:15</td>
+                                            <td><i>Coffee break</i></td>
+                                        </tr>
+                                        <tr>
+                                            <td>11:15 - 13:00</td>
+                                            <td>Segundo bloque de entrevistas</td>
+                                        </tr>
+                                        <tr class="danger">
+                                            <td>13:00 - 14:30</td>
+                                            <td><i>Almuerzo empresas</i> (acceso cerrado)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>14:30 - 16:00</td>
+                                            <td>Tercer bloque de entrevistas</td>
+                                        </tr>
+                                        <tr>
+                                            <td>16:00 - 16:15</td>
+                                            <td><i>Coffee break</i></td>
+                                        </tr>
+                                        <tr>
+                                            <td>16:15 - 18:00</td>
+                                            <td>Cuarto bloque de entrevistas</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <small>Si tienes agendada entrevista, recuerda llevar tu CV impreso y asistir semi-formal.</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <!-- Modal: Cronograma 4to dia -->
+            <div class="modal fade" id="Cronograma4" tabindex="-1" data-backdrop="static" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h4 class="modal-title" id="myModalLabel">Cronograma Feria Laboral FCFM</h4>
+                        </div>
+
+                        <div class="modal-body">
+                            <div class="tron-example table-responsive">
+                                <table class="table table-striped table-condensed">
+                                    <thead>
+                                        <tr>
+                                            <th>Horario</th>
+                                            <th>Actividades</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>10:00 - 13:00</td>
+                                            <td>Primer bloque de emprendimientos</td>
+                                        </tr>
+                                        <tr>
+                                            <td>10:00 - 11:00</td>
+                                            <td><i>(pendiente)</i></td>
+                                        </tr>
+                                        <tr>
+                                            <td>11:00 - 11:15</td>
+                                            <td><i>Coffee break</i></td>
+                                        </tr>
+                                        <tr>
+                                            <td>12:00 - 13:00</td>
+                                            <td><i>Charla Masisa Lab</i></td>
+                                        </tr>
+                                        <tr>
+                                            <td>13:30 - 14:30</td>
+                                            <td><i>Charla Cumplo</i></td>
+                                        </tr>
+                                        <tr>
+                                            <td>13:30 - 16:30</td>
+                                            <td>Segundo bloque de emprendimientos</td>
+                                        </tr>
+                                        <tr>
+                                            <td>14:30 - 15:30</td>
+                                            <td><i>Charla Octopus</i></td>
+                                        </tr>
+                                        <tr>
+                                            <td>16:00 - 16:15</td>
+                                            <td><i>Coffee Break</i></td>
+                                        </tr>
+                                        <tr>
+                                            <td>16:00 - 16:30</td>
+                                            <td><i>Charla EVoting</i></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <small>¿Te interesa postular a un emprendimiento? Lleva tu CV impreso y ve vestido como estés más cómodo.</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Modal: Mapa -->
+            <div class="modal fade" id="Mapa" tabindex="-1" data-backdrop="static" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h4 class="modal-title" id="myModalLabel">Mapa XXI Feria Laboral - 8, 9 y 10 de octubre</h4>
+                        </div>
+
+                        <div class="modal-body">
+                            <img src="{% static 'site/img/mapa.png' %}" class="img-responsive img-rounded" width="100%">
+                        </div>
+
+                        <div class="modal-footer">
+                            <small>Si tienes agendada entrevista, recuerda llevar tu CV impreso y asistir semi-formal.</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+    </section>
+
+{% endblock container %}
+
+{% block scripts %}
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../static/bootstrap/js/jquery.min.js"><\/script>')</script>
+<script src="{% static 'tron/js/vendor/bootstrap.min.js' %}"></script>
+<script src="{% static 'tron/js/vendor/smoothscroll.js' %}"></script>
+<script src="{% static 'tron/js/tron-ui.js' %}"></script>
+<script src="{% static 'tron/js/demo.js' %}"></script>
+<script src="{% static 'tron/outdatedbrowser/outdatedbrowser.min.js' %}"></script>
+<script src="{% static 'tron/outdatedbrowser/outdatedbrowser.init.js' %}"></script>
+
+
+{% endblock scripts %}

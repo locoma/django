@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block title %}{{ block.super }}Área Estudiante{% endblock %}
+
+{% block navbar-left %}
+  {% include "_navbar.html" with active_link="estudiante" %}
+{% endblock %}
+
+
+{% block container %}
+
+    <section class="demo-page padding-bottom-2x">
+      <div class="container">
+
+
+        <!-- Page Header with Breadcrumbs -->
+          <div class="page-header-with-breadcrumb">
+            <div class="page-header td">
+              <h1><i class="fa fa-graduation-cap" aria-hidden="true"></i> Área Estudiante <small>Servicios que ofrecemos a los estudiantes de la FCFM</small></h1>
+            </div>
+            <div class="td text-right">
+              <ol class="breadcrumb">
+                <li><a href="{% url 'home' %}">Inicio</a></li>
+                <li class="active">Área Estudiante</li>
+              </ol>
+            </div>
+          </div>
+        <!-- Page Header End -->
+
+          <div class="row space-top">
+              <div class="col-md-8">
+                <p class="text-justify">La Feria Laboral FCFM está enfocada en <strong>todas</strong> las carreras de la Facultad de Ciencias Físicas y Matemáticas y en <strong>todos</strong> los niveles de práctica, además de memorias, trabajo part-time y full-time.</p>
+				<p class="text-justify">Desde Abril hasta Diciembre se realizan charlas de diferentes instituciones con el fin de contar sobre sus procesos de selección o bien sobre alguna temática de su interés como la Transformación Digital, concursos de estudiantes, principales desafíos de la institución, etc. Estas charlas por lo general tienen cupos limitados y se privilegia la asignación de cupo a las personas que cumplen con la carrera y tipo de trabajo en que la institución está interesada. Puedes ver las charlas que tienen sus postulaciones abiertas <a role="menuitem" href="{% url 'encuentros' %}">aquí.</a></p>
+                <p class="text-justify">Durante los 3 días de la Feria Laboral se contará con un stand durante todo el día en que se entregarán tips para enfrentar de la mejor forma una entrevista laboral junto con corrección de CV. Durante los meses de Noviembre/Diciembre 2018 se realizarán actividades de preparación laboral para apoyar a los estudiantes y titulados que se enfrenten a procesos de selección.</p>
+                <p class="text-justify">Además, contamos con una Plataforma Laboral que funciona durante todo el año, donde podrás encontrar y postular a ofertas de prácticas, memorias y trabajos de diversas instituciones.</p>
+                  <p><div class="alert alert-warning text-center">La Feria Laboral es un evento <strong>exclusivo</strong> para estudiantes y egresados de la Escuela de Ingeniería y Ciencias de la Universidad de Chile.</div></p>
+              </div>
+              <div class="col-md-4">
+                  <div class="alert alert-info text-center">La Feria Laboral FCFM se realizará los días <strong>8, 9, y 10 de Octubre de 2018</strong></div>
+                  <div class="alert alert-primary">Para hacer reserva de entrevistas, inscribirte a eventos y acceder a la Plataforma Laboral necesitarás tu cuenta <strong>U-Pasaporte</strong>.</div>
+              </div>
+          </div>
+
+<!--<blockquote class="blockquote-reverse">
+  <p>"La Feria Empresarial es un proyecto realizado por estudiantes para estudiantes."</p>
+    <footer>Marta Guerra, <cite title="Source Title">Directora General</cite></footer>
+</blockquote>-->
+
+        <!--<div class="row">
+            <h3 class="block-heading">Servicios</h3>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="panel panel-info">
+                  <!-- Default panel contents --
+                  <div class="panel-heading">Feria Empresarial</div>
+                  <div class="panel-body">
+                    Durante la Feria Empresarial podrás participar de los procesos de selección de variadas empresas, instituciones y organizaciones, siendo parte de entrevistas en el mismo lugar del evento.
+                  </div>
+                  <!-- List group --
+                  <ul class="list-group">
+                    <li class="list-group-item"><b>Fechas:</b> 3, 4, 5 y 6 de Octubre de 2016</li>
+                    <li class="list-group-item"><b>Horario:</b> 9:00 a 17:00 hrs</li>
+                    <li class="list-group-item"><div class="alert alert-info text-center"><a href="{% url 'interships:list' %}">Sistema de Reservas 2016</a></div></li>
+                  </ul>
+                </div>
+            </div>
+            <div class="col-md-4">
+               <div class="panel panel-danger">
+                  <!-- Default panel contents --
+                  <div class="panel-heading">Semana de Preparación Laboral</div>
+                  <div class="panel-body">
+                    Este año se realizarán dos Semanas de Preparación Laboral para ayudar, tanto a estudiantes como a egresados, en el paso al mundo laboral.
+                  </div>
+                  <!-- List group --
+                  <ul class="list-group">
+                    <li class="list-group-item"><b>Fechas:</b> 5-9 de septiembre de 2016</li>
+                    <li class="list-group-item">
+                      <div class="alert alert-danger text-center"><a href="{% url 'spl' %}">Ver actividades</a></div>
+                    </li>
+                  </ul>
+                </div>
+            </div>
+            <div class="col-md-4">
+               <div class="panel panel-warning">
+                  <!-- Default panel contents --
+                  <div class="panel-heading">Plataforma Laboral</div>
+                  <div class="panel-body">
+                    Durante todo el año tendremos disponible nuestra nueva <b>Plataforma Laboral</b>, exclusiva para los estudiantes y egresados de la Facultad. Podrás encontrar y postular a diversar ofertas laborales durante todo el año.
+                  </div>
+                  <!-- List group --
+                  <ul class="list-group">
+                    <li class="list-group-item"><i>Sólo podrás acceder a ella con tu cuenta U-Pasaporte.</i></li>
+                    <li class="list-group-item">
+                      <div class="alert alert-warning text-center"><a href="{% url 'pl:plindex' %}">Acceder a Plataforma Laboral</a></div>
+                    </li>
+                  </ul>
+                </div>
+            </div>
+        </div> -->
+
+
+
+
+
+
+    </div>
+    </section>
+
+{% endblock container %}
+
+{% block scripts %}
+{% endblock scripts %}

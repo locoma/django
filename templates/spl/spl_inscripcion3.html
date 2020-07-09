@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block title %}{{ block.super }}Semana Preparación Laboral{% endblock %}
+
+{% block styles %}
+    <link href="{% static 'tron/css/demo.css' %}" rel="stylesheet">
+    <link href="{% static 'tron/examples/team/team.css' %}" rel="stylesheet">
+    <link href="{% static 'tron/outdatedbrowser/outdatedbrowser.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block navbar-left %}
+  {% include "_navbar.html" with active_link="spl" %}
+{% endblock %}
+
+{% block container %}
+
+    <section class="demo-page padding-bottom-2x">
+      <div class="container">
+
+
+        <!-- Page Header with Breadcrumbs -->
+        <div class="page-header-with-breadcrumb">
+            <div class="page-header td">
+                <h1>Semana Preparación Laboral <small></small></h1>
+            </div>
+            <div class="td text-right">
+                <ol class="breadcrumb">
+                    <li><a href="{% url 'home' %}">Inicio</a></li>
+                    <li><a href="{% url 'about' %}">Sobre Nosotros</a></li>
+                    <li class="active">Semana Preparación Laboral</li>
+                </ol>
+            </div>
+        </div><!-- Page Header End -->
+
+          <div class="row space-top">
+          </div>
+
+          <br>          
+          <br>
+          <!-- BEGIN Podio web form -->
+          <script src="https://podio.com/webforms/19176907/1291043.js"></script>
+          <script type="text/javascript">
+              _podioWebForm.render("1291043")
+          </script>
+          <noscript>
+              <a href="https://podio.com/webforms/19176907/1291043" target="_blank">Por favor, rellena el formulario</a>
+          </noscript>
+          <!-- END Podio web form -->
+
+    </div>
+    </section>
+
+{% endblock container %}
+
+{% block scripts %}
+{% endblock scripts %}

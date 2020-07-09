@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block title %}{{ block.super }}Inicio{% endblock %}
+
+{% block styles %}
+    <link href="{% static 'tron/examples/landing/landing.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block navheader %}
+    <header class="navbar navbar-transparent navbar-fixed-top navbar-centered-nav navbar-animated">
+{% endblock %}
+
+{% block navbar-left %}
+  {% include "_navbar.html" with active_link="home" %}
+{% endblock %}
+
+
+
+{% block logolight %}
+    <img src="{% static 'tron/img/logo-light.png' %}">
+{% endblock %}
+
+
+{% block splash %}
+    <!-- Intro Section -->
+    <section class="intro" style="background-image: url(/static/tron/img/banner.jpg)" id="home">
+      <div class="overlay"> 
+	  </div>
+      <span></span>
+      <div class="container">
+	  <div style="aling:right">
+	  <form action="{%url 'mailing:filto' %}" method="post">
+	  {% csrf_token %}
+	  {{filt|crispy}}
+	  <button type="submit" class="btn btn-primary" type="button">Filtrar</button>
+	  </div>
+	    <table style="background-color:transparent;border:1px solid red">
+	     <tr>
+		   <td style="color:white;text-align:center">Nombre:</td>
+		   <td style="color:white;text-align:center">Carrera:</td>
+		   <td style="color:white;text-align:center">Mail:</td>
+		 </tr>
+		  {%for b in obj2 %}
+		  <tr>
+		   <td style="width:250px; text-align:center"><p>{{b.id_users.user.name}}</p></td>
+		   <td style="width:250px; text-align:center"><p>{{b.id_users.carrera}}</p></td>
+		   <td style="width:250px; text-align:center"><p>{{b.id_users.email}}</p></td>
+           </tr>		   
+         {%endfor%}
+        </table>  		 
+        </div>  
+      </div>
+    </section>
+{% endblock splash %}
+
+   
+{% block scripts %}
+<script src="{% static 'tron/js/vendor/bootstrap.min.js' %}"></script>
+<script src="{% static 'tron/examples/landing/landing.js' %}"></script>
+{% endblock scripts %}

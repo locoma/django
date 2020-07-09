@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block title %}{{ block.super }}Inicio{% endblock %}
+
+{% block styles %}
+    <link href="{% static 'tron/examples/landing/landing.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block navheader %}
+    <header class="navbar navbar-transparent navbar-fixed-top navbar-centered-nav navbar-animated">
+{% endblock %}
+
+{% block navbar-left %}
+  {% include "_navbar.html" with active_link="home" %}
+{% endblock %}
+
+
+
+{% block logolight %}
+    <img src="{% static 'tron/img/logo-light.png' %}">
+{% endblock %}
+
+
+{% block splash %}
+    <!-- Intro Section -->
+    <section class="intro" style="background-image: url(/static/tron/img/banner.jpg)" id="home">
+      <div class="overlay"> 
+	  </div>
+      <span></span>
+      <div class="container">
+	  <div style="aling:right">
+	     {% if user.is_staff %}
+          <li><a href="{% url 'mailing:li' %}" class="btn-outlined btn-primary navbar-btn">Empresas</a></li>
+	      <li><a href="{% url 'mailing:lis' %}" class="btn-outlined btn-primary navbar-btn">Mailing</a></li>
+         {% endif %}
+        </div>  
+      </div>
+    </section>
+{% endblock splash %}
+
+   
+{% block scripts %}
+<script src="{% static 'tron/js/vendor/bootstrap.min.js' %}"></script>
+<script src="{% static 'tron/examples/landing/landing.js' %}"></script>
+{% endblock scripts %}

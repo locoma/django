@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block title %}{{ block.super }}Contacto{% endblock %}
+
+{% block navbar-left %}
+  {% include "_navbar.html" with active_link="contacto" %}
+{% endblock %}
+
+{% block styles %}
+    <link href="{% static 'tron/css/tron-ui.css' %}" rel="stylesheet">
+{% endblock styles %}
+
+
+{% block container %}
+<!-- Container -->
+    <section class="demo-page container padding-bottom">
+
+      <!-- Page Header with Breadcrumbs -->
+      <div class="page-header-with-breadcrumb">
+        <div class="page-header td">
+          <h1>Contacto <small>¡Contáctanos!</small></h1>
+        </div>
+        <div class="td text-right">
+          <ol class="breadcrumb">
+                <li><a href="{% url 'home' %}">Inicio</a></li>
+                <li class="active">Contacto</li>
+          </ol>
+        </div>
+      </div><!-- Page Header End -->
+
+        {% if success %}
+            <div class="alert alert-success fade in">
+                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                  <strong>¡Gracias!</strong> ¡Su mensaje ha sido enviado!. </br> Nos ponderemos en contacto con usted.
+            </div>
+        {% endif %}
+
+      <!--Google Map-->
+      <div id="google-map" class="google-map space-top" data-location="Av. Beauchef 850, Santiago, Chile" data-zoom="15"><!--Insert Location in data-location, insert map zoom in data-zoom-->
+        <div id="map-canvas"></div>
+      </div><!--Google Map End-->
+
+      <div class="row space-top">
+
+        <!-- Contact Info -->
+        <div class="col-sm-6 space-bottom-2x">
+          <h3>Información de contacto</h3>
+          <ul class="list-group space-top">
+            <li class="list-group-item" href="#"><i class="fa fa-home fa-fw"></i>&nbsp; Oficina 402, Torre Central, Beauchef 850, Santiago, Chile</li>
+            <li class="list-group-item" href="#"><i class="fa fa-phone fa-fw"></i>&nbsp; +56 9 9492 8899 Ignacia Caamaño (Directora General)<Br><i class="fa fa-phone fa-fw"></i>&nbsp; +56 9 7262 7185 Simón Amigo (Director Comercial)</li>
+            <li class="list-group-item" href="#"><i class="fa fa-envelope fa-fw"></i>&nbsp; <a href="mailto:contacto@feriaempresarial.cl">contacto@feriaempresarial.cl</a></li>
+            <li class="list-group-item" href="#"><i class="fa fa-clock-o fa-fw"></i>&nbsp; Lunes - Viernes  9 AM - 6 PM</li>
+          </ul>
+        </div><!--Contact Info End-->
+
+        <!-- Contact Form -->
+        <div class="col-sm-6">
+          <h3>Envíanos un mensaje</h3>
+          <form role="form" id="example-form1" action="{% url 'enviar' %}" class="space-top" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+              <input type="text" class="form-control" name="name" id="exampleName" placeholder="Nombre" required>
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-control" name="email" id="exampleEmail" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" name="message" id="exampleMessage" placeholder="Mensaje" rows="5" required></textarea>
+            </div>
+            <input type="submit" class="btn btn-defaukt btn-sm" value="Enviar" name="btnenviar">
+          </form>
+        </div><!--Contact Form End-->
+
+      </div>
+    </section><!-- Container End -->
+
+{% endblock container %}
+
+{% block scripts %}
+    <script src="{% static 'tron/js/vendor/bootstrap.min.js' %}"></script>
+    <script src="{% static 'tron/examples/contacts/contacts.js' %}"></script>
+    <script src="{% static 'tron/js/vendor/smoothscroll.js' %}"></script>
+    <script src="{% static 'tron/js/tron-ui.js' %}"></script>
+    <script src="{% static 'tron/js/demo.js' %}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5DLwPPVAz88_k0yO2nmFe7T9k1urQs84" type="text/javascript"></script>
+{% endblock scripts %}

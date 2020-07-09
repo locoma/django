@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block title %}{{ block.super }}Semana Preparación Laboral{% endblock %}
+
+{% block styles %}
+    <link href="{% static 'tron/css/demo.css' %}" rel="stylesheet">
+    <link href="{% static 'tron/examples/team/team.css' %}" rel="stylesheet">
+    <link href="{% static 'tron/outdatedbrowser/outdatedbrowser.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block navbar-left %}
+  {% include "_navbar.html" with active_link="spl" %}
+{% endblock %}
+
+{% block container %}
+
+    <section class="demo-page padding-bottom-2x">
+      <div class="container">
+
+
+        <!-- Page Header with Breadcrumbs -->
+        <div class="page-header-with-breadcrumb">
+            <div class="page-header td">
+                <h1>Consejos para crear tu CV<small>Formato Tipo para la FCFM</small></h1>
+            </div>
+            <div class="td text-right">
+                <ol class="breadcrumb">
+                    <li><a href="{% url 'home' %}">Inicio</a></li>
+                    <li><a href="{% url 'about' %}">Sobre Nosotros</a></li>
+                    <li class="active"><a href="{% url 'spl' %}">Semana Preparación Laboral</a></li>
+                    <li>Consejos CV</li>
+                </ol>
+            </div>
+        </div><!-- Page Header End -->
+
+          <div class="row space-top space-bottom">
+            <div class="col-md-12">
+              La siguiente sección tiene como objetivo ayudarte en la creación de tu Currículum Vitae. En primer lugar, se presentan consejos generales para luego revisar cada sección. Con esto podrás rellenar fácilmente el formato de CV descargable que se encuentra al final en formato DOC.
+            </div>
+            <div class="col-md-12 space-top">
+              <div class="alert alert-info text-center">Creado por Feria Empresarial en colaboración con Unidad de Calidad de Vida Estudiantil de la FCFM</div>
+            </div>
+          </div>
+
+
+          <div class="row space-bottom">
+            <div class="col-md-12">
+              A modo general, ten en cuenta lo siguiente:
+              <ol>
+                <li><span>Revisa tu ortografía.</span></li>
+                <li><span>Algunas secciones son opcionales, por lo que, si no aplica simplemente no las incluyas.</span></li>
+                <li><span>¡No te asustes si tu CV solo tiene una plana! Es recomendable que no sea demasiado extenso (1-2 planas)</span></li>
+                <li><span>Tu CV es un documento formal, por lo tanto, el nombre del documento debe ser adecuado, por ejemplo, <i>CV_NombreApellido</i> y el formato para enviarlo es en PDF.</span></li>
+                <li><span>¡Cuidado con las redes sociales! Configura tu privacidad para que no sea posible acceder a tu perfil.</span></li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="row space-bottom">
+            <div class="col-md-12 text-center">
+              <button type="button" class="btn btn-default"><a href="http://www.feriaempresarial.cl/static/site/files/CV_Template_y_Consejos.rar" target="_blank">Descargar formato de CV tipo</a></button>
+            </div>
+          </div>
+
+
+          <div class="row space-bottom">
+            <div class="col-md-12 space-bottom">
+              El documento descargable tiene la siguiente estructura:
+            </div>
+            <div class="col-md-12 text-center">
+              <img src="{% static "site/img/consejoscv_1.png" %}">
+            </div>
+            <div class="col-md-12 text-center">
+              <img src="{% static "site/img/consejoscv_2.png" %}">
+            </div>
+          </div>
+
+
+
+  
+
+
+
+    </div>
+    </section>
+
+{% endblock container %}
+
+{% block scripts %}
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../static/bootstrap/js/jquery.min.js"><\/script>')</script>
+<script src="{% static 'tron/js/vendor/bootstrap.min.js' %}"></script>
+<script src="{% static 'tron/js/vendor/smoothscroll.js' %}"></script>
+<script src="{% static 'tron/js/tron-ui.js' %}"></script>
+<script src="{% static 'tron/js/demo.js' %}"></script>
+<script src="{% static 'tron/outdatedbrowser/outdatedbrowser.min.js' %}"></script>
+<script src="{% static 'tron/outdatedbrowser/outdatedbrowser.init.js' %}"></script>
+
+{% endblock scripts %}

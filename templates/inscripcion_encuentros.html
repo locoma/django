@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block title %}{{ block.super }}Charlas Feria 2017{% endblock %}
+
+{% block styles %}
+    <link href="{% static 'tron/css/demo.css' %}" rel="stylesheet">
+    <link href="{% static 'tron/examples/team/team.css' %}" rel="stylesheet">
+    <link href="{% static 'tron/outdatedbrowser/outdatedbrowser.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block navbar-left %}
+  {% include "_navbar.html" with active_link="team" %}
+{% endblock %}
+
+{% block container %}
+
+<section class="demo-page padding-bottom-2x">
+  <div class="container">
+
+
+    <!-- Page Header with Breadcrumbs -->
+    <div class="page-header-with-breadcrumb">
+        <div class="page-header td">
+            <h1>Inscripción Charlas Feria 2018 <small></small></h1>
+        </div>
+    </div><!-- Page Header End -->
+    <br>          
+    <br>
+	<!-- BEGIN Podio web form -->
+      <script src="https://podio.com/webforms/18661068/1255734.js"></script>
+      <script type="text/javascript">
+          _podioWebForm.render("1255734")
+      </script>
+      <noscript>
+          <a href="https://podio.com/webforms/18661068/1255734" target="_blank">Por favor, rellena el formulario</a>
+      </noscript>
+      <!-- END Podio web form -->
+
+</div>
+</section>
+
+{% endblock container %}
+
+{% block scripts %}
+{% endblock scripts %}
+
+
+

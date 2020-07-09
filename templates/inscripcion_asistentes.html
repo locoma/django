@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block title %}{{ block.super }}Asistentes Feria 2017{% endblock %}
+
+{% block styles %}
+    <link href="{% static 'tron/css/demo.css' %}" rel="stylesheet">
+    <link href="{% static 'tron/examples/team/team.css' %}" rel="stylesheet">
+    <link href="{% static 'tron/outdatedbrowser/outdatedbrowser.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block navbar-left %}
+  {% include "_navbar.html" with active_link="team" %}
+{% endblock %}
+
+{% block container %}
+
+    <section class="demo-page padding-bottom-2x">
+      <div class="container">
+
+
+        <!-- Page Header with Breadcrumbs -->
+        <div class="page-header-with-breadcrumb">
+            <div class="page-header td">
+                <h1>Postulación Asistentes Feria 2018 <small></small></h1>
+            </div>
+        </div><!-- Page Header End -->
+
+          <div class="row space-top">
+            Los Asistentes de Instituciones reciben y acompañan a éstas <b>durante el día en que están en la Feria Laboral</b>,  teniendo relación directa con los invitados, ayudándolos a administrar las entrevistas que se realizarán y presentar a los entrevistados con la institución asistida. Es una instancia para trabajar directamente con el grupo organizador de la feria, lo que te dará ventaja, por experiencia y reconocimiento del equipo, al momento de postular para el siguiente año. 
+            <br><br>
+            <b>Los beneficios de ser asistente son los siguientes:</b><br>
+            &nbsp;&nbsp;- Podrás <b>escoger la institución</b> de la cual desees ser asistente de acuerdo a tus preferencias.<br>
+            &nbsp;&nbsp;- Tendrás la opción de <b>compartir el desayuno, el almuerzo y la jornada en general con los representantes de tu institución asignada</b>, ampliando tu red de contactos los cuales pueden ser claves a la hora de conseguir alguna práctica o trabajo.<br>
+            &nbsp;&nbsp;- Disfrutarás de todos los <b>beneficios y sorpresas</b> que tendrá la Feria Laboral FCFM gracias a sus auspiciadores.
+
+
+          </div>
+
+
+          <br>          
+          <br>
+          <!-- BEGIN Podio web form -->
+			<script src="https://podio.com/webforms/16660147/1120136.js"></script>
+			<script type="text/javascript">
+			  _podioWebForm.render("1120136")
+			</script>
+			<noscript>
+            <a href="https://podio.com/webforms/16577379/1114597" target="_blank">Por favor, rellena el formulario</a>
+          </noscript>
+          <!-- END Podio web form -->
+    </div>
+    </section>
+
+{% endblock container %}
+
+{% block scripts %}
+{% endblock scripts %}

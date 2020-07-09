@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load staticfiles %}
+    {% load thumbnail %}
+    
+  <head>
+    <title>{% block title %}{% include "_brandname.html" %} :: {% endblock %}</title>
+	<style type="text/css">
+.t {
+   width: 100%;
+   border: 1px solid #000;
+}
+ .t1 {
+   width: 25%;
+   text-align: center;
+   vertical-align: top;
+   border: 1px solid #000;
+   border-collapse: collapse;
+   padding: 0.3em;
+   caption-side: bottom;
+}
+.t3 {
+   padding: 0.3em;
+}
+    </style>
+    <!--SEO Meta Tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="XX Feria Empresarial 2017. Facultad de Ciencias Físicas y Matemáticas, Universidad de Chile. Octubre.">
+    <meta name="keywords" content="feria, empresarial, fcfm, 2017">
+    <meta name="author" content="Equipo TI Feria Empresarial">
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="{% static 'tron/img/logo-nav.png' %}" width="260" height="60">
+    <!-- <link rel="shortcut icon" href="{% static 'tron/favicon.ico' %}" type="image/x-icon">
+    <link rel="icon" href="{% static 'tron/favicon.ico' %}" type="image/x-icon"> -->
+
+
+    <!-- Tron Bootstrap Skin and UI CSS -->
+    <link href="{% static 'tron/css/tron-ui.css' %}" rel="stylesheet">
+
+    <!-- CSS Tron Examples -->
+    <link href="{% static 'tron/css/demo.css' %}" rel="stylesheet">
+    <link href="{% static 'tron/examples/contacts/contacts.css' %}" rel="stylesheet">
+    <link href="{% static 'tron/examples/team/team.css' %}" rel="stylesheet">
+
+
+      <!-- Page specific CSS -->
+    {% block styles %}
+        <link href="{% static 'tron/css/tron-ui.css' %}" rel="stylesheet">
+    {% endblock styles %}
+
+    <!-- Outdated Browser Plugin Styles -->
+    <link href="{% static 'tron/outdatedbrowser/outdatedbrowser.css'%}" rel="stylesheet">
+
+    <!-- Custom tags for the head tag -->
+    {% block extrahead %}{% endblock extrahead %}
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+
+  <body data-spy="scroll" data-target=".landing-navbar-collapse" data-offset="300">
+
+      <!-- Login Modal -->
+    <div class="modal fade tron-example-modal-sm" tabindex="-1" data-backdrop="static" id="signupModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title">Ingreso</h4>
+          </div>
+          <div class="modal-body">
+             <div class="col-sm-6">
+                 <h2>Estudiante</h2>
+                 <p>Inicia sesión con tu cuenta U-Pasaporte en el siguiente enlace.</p>
+                  <script src="https://www.u-cursos.cl/upasaporte/javascript?servicio=feriaemp"></script>
+             </div>
+              <div class="col-sm-6">
+                  <h2>Empresa</h2>
+                <p>Si eres parte de una empresa, organización o institución, ponte en contacto con nosotros.</p>
+                <a href="{% url 'contacto' %}" class="btn btn-info center-block btn-sm"><i class="fa fa-envelope"></i> Haz click aquí</a>
+              </div>
+
+          </div>
+          <div class="modal-footer">
+
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+
+
+    {% block navbar %}
+    <!-- Header -->
+     {% block navheader %}
+        <header class="navbar navbar-fixed-top navbar-centered-nav tron-nav-demo-page">
+     {% endblock %}
+      <div class="container">
+        <div class="navbar-header">
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".landing-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="arrow"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="{% url 'home' %}" class="navbar-logo">
+              {% block logolight %}{% endblock %}
+            <img class="alt-logo" src="{% static 'tron/img/logo-nav.png' %}" width="260" height="60">
+          </a>
+        </div>
+
+      {% block navbar-menu %}
+        <nav class="collapse navbar-collapse landing-navbar-collapse" role="navigation">
+          <ul class="nav navbar-nav">
+            {% block navbar-left %}{% endblock %}
+          </ul>
+          <div class="navbar-right">
+
+            {% block navbar-right %}
+              {% if user.is_authenticated %}
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle profile-menu" data-toggle="dropdown" role="button">
+                         {{ user.name|truncatechars:20 }}
+                         <span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu" role="menu">
+                            <li><img class="thumb img-circle center-block" src="{{ user.profile.picture }}" height=50 width=50 alt=""/></li>
+                            {% if user.is_staff %}
+                                <li><a href="{% url 'admin:index' %}" class="btn-outlined btn-primary navbar-btn">Admin</a></li>
+								<li><a href="{% url 'mailing:list' %}" class="btn-outlined btn-primary navbar-btn">Mailing</a></li>
+                            {% endif %}
+                            <li><a href="{% url 'profiles:show_self' %}" class="btn-outlined btn-primary navbar-btn">Perfil</a></li>
+                            <li><a href="{% url 'interships:reservas' %}" class="btn-outlined btn-primary navbar-btn">Mis Reservas</a></li>
+                            <li><a href="{% url 'accounts:logout' %}" class="btn-outlined btn-default navbar-btn">Cerrar Sesión</a></li>
+
+                      </ul>
+                    </li>
+
+                </ul>
+                {% elif not user.is_authenticated %}
+                    <a href="#" class="btn-outlined btn-primary navbar-btn" data-toggle="modal" data-target="#signupModal">Ingresar</a>
+              {% endif %}
+            {% endblock %}
+          </div>
+        </nav>
+          {% endblock %}
+        </div>
+    </header>
+      {% endblock navbar %}
+    <!-- Header Close-->
+      {% if condiciones == 1 %}
+          {% block splash %}
+          {% endblock splash %}
+          {% block container %}
+              <div class="container">
+                  <div class="starter-template">
+                      <h1>New Project</h1>
+                      <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+                  </div>
+              </div><!-- /.container -->
+          {% endblock container %}
+      {% else %}
+          <br><br><br><br><br>
+          <a href="/static/site/files/Terminos.pdf">Descarga Condiciones antes de aceptar</a>
+          <form action="{%url 'condiciones' %}" method="post">
+          {% csrf_token %}
+          {{cond}}
+          <br>
+          <button type="submit" class="btn btn-primary" type="button">Enviar</button>
+      {% endif %}
+
+
+
+    <!-- Site footer -->
+      {% block footer %}
+       <!-- Footer -->
+          <hr>
+<div class="container space-bottom text-center">
+      <div class="row">
+        <div class="col-sm-4">
+          <button type="button" class="btn btn-info btn-xs space-bottom">Con el auspicio de:</button>
+            <div class="row space-bottom">
+              <div class="col-sm-6">
+                <a href="https://www.instaclick.cl" target="_blank" class="logo"><img src="{% static 'site/img/click.png' %}" height="50px" alt="insta"></a>
+              </div>
+            <!--  <div class="col-sm-6">
+                <a href="http://www.liberty.cl/" target="_blank" class="logo"><img src="{% static 'tron/img/auspiciadores/liberty_logo.png' %}" height="70px"  alt="Liberty Seguros"></a>
+              </div>-->
+            </div>
+        </div>
+        <div class="col-sm-4">
+          <button type="button" class="btn btn-primary btn-xs space-bottom">Colabora:</button>
+          <div class="row space-bottom">
+            <div class="col-sm-4">
+              <a href="https://www.pregrado.cl" target="_blank" class="logo"><img src="{% static 'site/img/Calidad.jpg' %}" height="70px" alt="Calidad de vida" align="center"></a>
+            </div>
+           <!-- <div class="col-sm-6">
+              <a href="https://www.facebook.com/profile.php?id=100011413757225&fref=ts" target="_blank" class="logo"><img src="{% static 'tron/img/apoyo/taiko_sushi_logo.png' %}" height="70px" alt="Taiko Sushi"></a>
+            </div>-->
+          </div>
+        </div>
+        
+      </div>
+    </div>
+          <footer class="footer" style="background-color:skyblue;">
+              <div class="container">
+                  <div class="row">
+                      <div class="col-sm-4">
+                          <a  class="logo"><img src="{% static 'tron/img/logo-light-new.png' %}" width="260" height="60" alt="Feria Empresarial"></a>
+                      </div>
+                      <div class="col-sm-4">
+					     <a class="logo"><img src="{% static 'site/img/Redes.png' %}" width="260" height="60" alt="Redes"></a>
+                      </div>
+					  <div class="col-sm-4">
+					     <a ><img src="{% static 'site/img/hola.png' %}" height="70px" alt="Redes"></a>
+                      </div>
+                      <div class="col-sm-4">
+                          <div class="social-buttons">
+                              <a href="https://www.linkedin.com/company/feria-empresarial" target="_blank" class="social-btn sb-linkedin"><i class="fa fa-linkedin"></i></a>
+                              <a href="https://www.facebook.com/FeriaFCFM/" target="_blank" class="social-btn sb-facebook"><i class="fa fa-facebook"></i></a>
+                              <a href="https://twitter.com/feriafcfm" target="_blank" class="social-btn sb-twitter"><i class="fa fa-twitter"></i></a>
+                              <a href="https://instagram.com/ferialaboralfcfm" target="_blank" class="social-btn sb-instagram"><i class="fa fa-instagram"></i></a>
+                              <a href="https://www.youtube.com/user/FeriaEmpresarialFCFM" target="_blank" class="social-btn sb-youtube"><i class="fa fa-youtube-play"></i></a>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-12">
+                          <p>Copyright 2018. Feria Laboral FCFM, Escuela de Ingeniería y Ciencias, Universidad de Chile.<br>
+                              <a href="http://www.uchile.cl" target="_blank">UChile</a> | <a href="http://fcfm.uchile.cl" target="_blank">FCFM</a></p>
+                      </div>
+                  </div>
+              </div>
+          </footer><!-- Footer End -->
+      {% endblock %}
+
+
+      <!-- Outdated Browser
+    ================================================== -->
+    <div id="outdated">
+      <span class="icon-outdated fa fa-exclamation-triangle"></span>
+      <h2>Your browser is out-of-date!</h2>
+      <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update my browser now </a></p>
+      <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+
+
+      <!-- jQuery Library
+    ================================================== -->
+    <script src="{% static 'tron/js/vendor/jquery.min.js' %}"></script>
+
+    <!-- Outdated Browser Plugin
+    ================================================== -->
+    <script src="{% static 'tron/outdatedbrowser/outdatedbrowser.min.js' %}"></script>
+    <script src="{% static 'tron/outdatedbrowser/outdatedbrowser.init.js' %}"></script>
+
+    <!-- Plugins and Custom scripts
+    ================================================== -->
+
+    <script src="{% static 'tron/js/vendor/smoothscroll.js' %}"></script>
+    <script src="{% static 'tron/js/tron-ui.js' %}"></script>
+    <script src="{% static 'tron/js/demo.js' %}"></script>
+
+      <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-23421342-1', 'auto');
+          ga('send', 'pageview');
+
+      </script>
+      <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.6";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+      </script>
+
+    {% block scripts %}
+    {% endblock scripts %}
+  </body>
+</html>
+
+

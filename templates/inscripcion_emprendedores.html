@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block title %}{{ block.super }}Semana Preparación Laboral{% endblock %}
+
+{% block styles %}
+    <link href="{% static 'tron/css/demo.css' %}" rel="stylesheet">
+    <link href="{% static 'tron/examples/team/team.css' %}" rel="stylesheet">
+    <link href="{% static 'tron/outdatedbrowser/outdatedbrowser.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block navbar-left %}
+  {% include "_navbar.html" with active_link="empresa" %}
+{% endblock %}
+
+{% block container %}
+
+    <section class="demo-page padding-bottom-2x">
+      <div class="container">
+
+
+        <!-- Page Header with Breadcrumbs -->
+        <div class="page-header-with-breadcrumb">
+            <div class="page-header td">
+                <h1>Postulación Emprendedores<small></small></h1>
+            </div>
+            <div class="td text-right">
+                <ol class="breadcrumb">
+                    <li><a href="{% url 'home' %}">Inicio</a></li>
+                    <li><a href="{% url 'empresa' %}">Empresa</a></li>
+                    <li class="active"><a href="{% url 'emprendedores' %}">Postulación Emprendedores</a></li>
+                </ol>
+            </div>
+        </div><!-- Page Header End -->
+          <div class="row space-top">
+              <a name="form9506166" id="formAnchor9506166"></a>
+              <script type="text/javascript" src="https://fs29.formsite.com/include/form/embedManager.js?9506166"></script>
+              <script type="text/javascript">
+                  EmbedManager.embed({
+                      key: "https://fs29.formsite.com/res/showFormEmbed?EParam=m%2FOmK8apOTDvs%2FvQ44TEVUHp%2BOxx3Si2&9506166",
+                      width: "100%",
+                      mobileResponsive: true
+                  });
+                  </script>
+          </div>
+
+          <br>          
+          <br>
+
+      </div>
+    </section>
+
+{% endblock container %}
+
+{% block scripts %}
+{% endblock scripts %}

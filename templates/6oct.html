@@ -1,0 +1,517 @@
+﻿{% extends "base.html" %}
+
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block title %}{{ block.super }}Sobre nosotros{% endblock %}
+
+{% block navbar-left %}
+  {% include "_navbar.html" with active_link="about" %}
+{% endblock %}
+
+
+
+{% block container %}
+
+    <section class="demo-page padding-bottom-2x">
+      <div class="container">
+
+
+          <!-- Page Header with Breadcrumbs -->
+      <div class="page-header-with-breadcrumb">
+        <div class="page-header td">
+          <h1>XIX Feria Empresarial <small>Emprendimiento e innovación tecnológica</small></h1>
+        </div>
+        <div class="td text-right">
+          <ol class="breadcrumb">
+            <li><a href="{% url 'home' %}">Inicio</a></li>
+            <li><a href="{% url 'about' %}">Sobre Nosotros</a></li>
+            <li class="active">XIX Feria Empresarial</li>
+          </ol>
+        </div>
+      </div><!-- Page Header End -->
+
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="block-heading">¡Día de emprendimiento e innovación tecnológica!</h3>
+            </div>
+        </div>
+          <div class="row">
+            <div class="col-md-6 text-justify">
+                <p>El día <strong>6 de octubre</strong> la <strong>XIX Feria Empresarial</strong> estará enfocada en <b>Emprendimiento e Innovación Tecnológica</b>. Te esperamos de <strong>10:00 a 17:00 hrs</strong> bajo el Auditorio d'Etigny en Beauchef 851.</p>
+                <p>Ven a conocer más de 20 emprendimientos e incubadoras y las oportunidades que tienen para tí. Este día no funcionará con entrevistas agendadas, sólo lleva tu CV impreso y acércate a conversar con los emprendimientos que te interesan.</p>
+                <p>Este año contamos con la ayuda de <b>Open Lab</b>, <b>Socialab</b>, <b>Start-Up Chile</b> y <b>Laboratorio de Gobierno</b>.
+            </div>
+            <div class="col-md-6">
+              <img src="{% static 'tron/img/banner.jpg' %}" class="img-responsive img-rounded" width="100%">
+              <small class="center-block" style="text-align: center; padding: 10px;color: #959595;">XVIII Feria Empresarial realizada en Beauchef 851, Santiago.</small>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="block-heading">Actividades</h3>
+            </div>
+            <div class="col-md-12">
+                <div class="table-responsive space-top">
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th width="150px">Horario</th>
+                        <th>Actividad</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+		                  <tr>
+                        <td>
+                          <b>10:00 - 11:00 hrs</b><br>
+                          <img src="{% static 'site/img/web_startupchile_v3.png' %}" width="300px">
+                        </td>
+                        <td class="small text-left">
+                          <p><b>Emprender for dummies</b></p>
+                          <p>Panel de Emprendedores de StartUp Chile</p>
+			                   </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <b>11:00 - 12:00 hrs</b><br>
+                          <img src="{% static 'site/img/web_laboratoriodegobierno.png' %}" width="300px">
+                        </td>
+                        <td class="small text-left">
+                          <p>Te invitamos a un encuentro para conocer más detalles de la convocatoria <b>AULAB Turismo</b> mediante un taller que sea el primer paso en la búsqueda de soluciones para los 5 desafíos de AULAB Turismo.</p>
+                          <p>Invitamos a todos los estudiantes y académicos de educación superior de Chile a participar de la convocatoria AULAB Turismo, convocatoria de innovación abierta de la Subsecretaría de Turismo y SERNATUR con el apoyo del Laboratorio de Gobierno. En esta segunda versión buscamos ideas que lleven al turismo nacional a un nuevo nivel. El incentivo es grande: al finalizar el proceso, se premiará con 40 millones de pesos a las tres mejores ideas con un compromiso de implementación de un piloto junto al Ministerio de Economía, Fomento y Turismo.</p>
+                          <p><b>Ubicación:</b> OpenLab, 2do piso Edificio Poniente (acceso sur)</p>
+                         </td>
+                      </tr> 
+                      <tr>
+                        <td>
+                          <b>12:00 - 13:00 hrs</b><br>
+                          <img src="{% static 'site/img/web_masisalab.png' %}" width="300px">
+                        </td>
+                        <td class="small text-left">
+                          <b>Masisa Lab: el desafío de la innovación abierta corporativa</b><br>
+                          <b>Expositor:</b> <i>Mauricio Matus</i>, Líder de innovación y de Masisa Lab Andina
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <b>13:30 - 14:30</b><br>
+                          <img src="{% static 'site/img/web_cumplo.png' %}" width="300px">
+                        </td>
+                        <td class="small text-left">
+                          <b>Cumplo</b> es la plataforma de financiamiento colaborativo más grande de América Latina. Somos el punto de encuentro entre quienes quieren invertir y empresas que necesitan financiamiento, a una tasa justa. Proveemos a ambas partes de apoyo, tecnología e información.<br><br>
+
+                          <b>Expositor:</b> <i>Nicolás Shea</i>. <small>Ingeniero Comercial PUC, Magíster en Educación en Columbia y MBA en Stanford University. Fundador de Cumplo, Start-Up Chile, eClass y de la Asociación Chilena de Emprendedores.
+                          Presidente del directorio de Socialab y ganador de dos premios nacionales de innovación Avonni (por Start Up Chile en 2011 y Cumplo en 2012). En 2013 fue distinguido como emprendedor del año por la Universidad de Santiago y el Colegio de Ingenieros de Chile, y en 2014 fue elegido como uno de los Jóvenes Líderes Globales por el Foro Económico Mundial.</small>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <b>14:30 - 15:30</b><br>
+                          <img src="{% static 'site/img/web_octopus.png' %}" width="300px">
+                        </td>
+                        <td class="small text-left">
+                          <p>OCTOPUS fue fundada en 2008 como un emprendimiento de desarrollo de software y tecnología de integración. Su equipo de innovación ha liderado proyectos principalmente especializados en las tecnologías de Realidad Aumentada, Realidad Virtual 360º y video streaming en directo. Mauricio Lavín, fundador de este proyecto, nos contará acerca del emprendimiento como opción laboral a través de su experiencia aterrizada al contexto que se vive hoy en Chile, junto con mostrarnos cómo funcionan las innovadoras tecnologías que ofrece OCTOPUS.</p>
+                          <p><b>Expositor:</b> <i>Mauricio Lavín</i>, OCTOPUS Founder & CEO, innovation & startup mentor. AR, VR & 360º Video Live Streaming technology specialist. UIX believer. iQVi sense enhancer creator.</p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <b>15:30 - 16:00</b><br>
+                          <img src="{% static 'site/img/web_socialab.png' %}" width="300px">
+                        </td>
+                        <td class="small text-left">
+                          <p>Organización que busca generar impacto social positivo a nivel global mediante la búsqueda y el apoyo a emprendimientos sociales innovadores y sostenibles en etapa temprana. Pretendemos impulsar un nuevo modelo de desarrollo socio-económico, basado en la diversidad, empatía y colaboración, centrado en resolver los grandes problemas del mundo a través de estas iniciativas.</p>
+                          <p><b>Expositor:</b> <i>Pablo Pérez</i>, Subdirector de Cosistema de Socialab. Ingeniero Civil Industrial de la Universidad de Chile.</p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <b>16:00 - 16:30</b><br>
+                          <img src="{% static 'site/img/web_evoting.png' %}" width="300px">
+                        </td>
+                        <td class="small text-left">
+                          <p>EVoting es un emprendimiento que ofrece una solución de votación electrónica remota, cambiando la tradicional urna y votación a papel, por un sistema de votación por internet. Nació el 2013, su fundador y gran parte de quienes integran EVoting han estudiado o estudian actualmente en Beauchef.</p>
+                          <p><b>Expositor:</b> <i>Mario Novoa</i>. Gerente Comercial de EVoting. Ingeniería Civil Industrial de la Universidad de Chile</p>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="block-heading">Participantes</h3>
+            </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-12">
+            <ul id="myTab" class="nav nav-tabs">
+              <li class="active"><a href="#todoeldia" data-toggle="tab">Todo el día</a></li>
+              <li><a href="#manana" data-toggle="tab">Mañana</a></li>
+              <li><a href="#tarde" data-toggle="tab">Tarde</a></li>
+            </ul>
+          </div>
+
+          <div id="myTabContent" class="tab-content">
+              <div class="tab-pane fade in active" id="todoeldia">
+
+                <!-- TODO EL DÍA -->
+                
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="thumbnail with-caption">
+                      <img src="{% static 'site/img/web_openlab.png' %}">
+                      <div class="caption">
+                        <h4>OpenLab</h4>
+                        <p>OpenLab es el Laboratorio de Innovación y Emprendimiento de la FCFM. Está orientado a fortalecer capacidades de innovación y emprendimiento. Se constituye como un agente creador y ejecutor de experiencias que permiten potenciar proyectos de carácter científico-tecnológico. Aquí confluyen y participan distintos actores del mundo universitario, estatal, empresarial, emprendedor y de capital de riesgo.</p>
+                        <p><strong>Buscan:</strong> Ingeniería Química, Minería e Industrias (I y II)</p>
+                        <a href="https://www.facebook.com/OpenlabUchile/" target="_blank" class="btn btn-primary btn-sm" role="button">Página web</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="thumbnail with-caption">
+                      <img src="{% static 'site/img/web_socialab.png' %}">
+                      <div class="caption">
+                        <h4>Socialab</h4>
+                        <p>Organización que busca generar impacto social positivo a nivel global mediante la búsqueda y el apoyo a emprendimientos sociales innovadores y sostenibles en etapa temprana. Pretendemos impulsar un nuevo modelo de desarrollo socio-económico, basado en la diversidad, empatía y colaboración, centrado en resolver los grandes problemas del mundo a través de estas iniciativas.</p>
+                        <p><strong>Buscan:</strong> Ingeniería Civil Industrial (Fulltime)</p>
+                        <a href="http://socialab.com/" target="_blank" class="btn btn-primary btn-sm" role="button">Página web</a>
+                      </div>
+                    </div>
+                  </div> 
+                  <div class="col-md-4">
+                    <div class="thumbnail with-caption">
+                      <img src="{% static 'site/img/web_lajucleta.png' %}">
+                      <div class="caption">
+                        <h4>La Jucleta</h4>
+                        <p>Emprendimiento levantado por Cristian Ruiz que busca potenciar un estilo de vida sano con el placer de disfrutar una rica bebida frutal. ¡Ven a hacer tu propio jugo!</p>
+                        <a href="https://www.facebook.com/www.lajucleta.cl/" target="_blank" class="btn btn-primary btn-sm" role="button">Página web</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- MAÑANA -->
+              <div class="tab-pane fade" id="manana">
+
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="thumbnail with-caption">
+                      <img src="{% static 'site/img/web_reciclapp_v5.png' %}">
+                      <div class="caption">
+                        <h4>Reciclapp <small>Start-Up Chile</small></h4>
+                        <p>Reciclapp es una aplicación que permite unir a personas que tienen material reutilizable, con recicladores quienes harán retiro del material para luego comercializarlo libremente.</p>
+                        <p><strong>Buscan:</strong> Ingeniería Civil Industrial (Práctica II, Trabajo part-time).</p>
+                        <a href="http://www.reciclapp.cl" target="_blank" class="btn btn-primary btn-sm" role="button">Página web</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="thumbnail with-caption">
+                      <img src="{% static 'site/img/web_zappada.png' %}">
+                      <div class="caption">
+                        <h4>Zappada <small>Start-Up Chile</small></h4>
+                        <p>Zappada es una aplicación móvil que permite componer maquetas de canciones sin usar instrumentos, simplemente tarareando melodías, pero que finalmente suena como una canción con distintos instrumentos.</p>
+                        <p><strong>Buscan:</strong> Ingeniería Civil Industrial (Práctica II, Trabajo part-time).</p>
+                        <a href="http://www.zappada.com" target="_blank" class="btn btn-primary btn-sm" role="button">Página web</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="thumbnail with-caption">
+                      <img src="{% static 'site/img/web_kidint.png' %}">
+                      <div class="caption">
+                        <h4>Kidnit <small>Start-Up Chile</small></h4>
+                        <p>Plataforma digital de libros infantiles interactivos.</p>
+                        <p><strong>Buscan:</strong> Ingeniería Civil en Computación, Ingeniería Civil Eléctrica (Práctica III, Trabajo part-time, Trabajo full-time).</p>
+                        <a href="http://www.kidint.com" target="_blank" class="btn btn-primary btn-sm" role="button">Página web</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <!-- FILA 2 MÑA -->
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="thumbnail with-caption">
+                      <img src="{% static 'site/img/web_cms.png' %}">
+                      <div class="caption">
+                        <h4>Construyendo Mis Sueños</h4>
+                        <p>ONG nacida bajo el alero del Departamento de Ingeniería Industrial de la Universidad de Chile, que tiene como misión apoyar a emprendedores, micro y pequeños empresarios, para que crezcan y se desarrollen; sobre todos aquellos que se encuentran en condiciones de vulnerabilidad social.</p>
+                        <p><b>Buscan:</b> Ingeniería Civil Industrial, Química, Mecánica, Eléctrica (Práctica)</p>
+                        <a href="http://www.construyendomissuenos.cl/" target="_blank" class="btn btn-primary btn-sm" role="button">Página web</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="thumbnail with-caption">
+                      <img src="{% static 'site/img/web_clubdeinnovacion.png' %}">
+                      <div class="caption">
+                        <h4>Club de Innovación</h4>
+                        <p>Somos un HUB que genera valor sostenible desarrollando capacidades de innovación, conectando, colaborando y co-creando, junto a nuestros socios y al ecosistema nacional, regional e internacional.</p>
+                        <a href="http://www.clubdeinnovacion.cl" target="_blank" class="btn btn-primary btn-sm" role="button">Página web</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="thumbnail with-caption">
+                      <img src="{% static 'site/img/web_minebridges.png' %}">
+                      <div class="caption">
+                        <h4>Mine Bridges</h4>
+                        <p>Empresa dedicada al desarrollo de soluciones a medida, integrales y avanzadas, que apuesta por la innovación y las nuevas tecnologías como instrumento fundamental para dar solución a los problemas actuales de la industria minera y construir su futuro, por medio de un desarrollo sostenible.</p>
+                        <p><strong>Buscan:</strong> Industrias, Minas, Computación (Práctica 2, 3, Memoria)</p>
+                        <a href="http://www.minebridges.com" target="_blank" class="btn btn-primary btn-sm" role="button">Página web</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <!-- FILA 3 MÑA -->
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="thumbnail with-caption">
+                      <img src="{% static 'site/img/web_takeahand.png' %}">
+                      <div class="caption">
+                        <h4>Take a Hand <small>OpenLab</small></h4>
+                        <p>En takeaHand desarrollamos tecnología corporal para la independencia funcional, adaptada a las necesidades de cada persona, con calidad y asequibilidad. Implementamos tecnologías emergentes, impresión 3D, ingeniería de materiales, y el poder de las redes sociales, que permiten crecimiento exponencial y soluciones sofisticadas en prótesis, tres (3) veces más económicas y rápidas que las opciones tradicionales. Con presencia en Chile, Venezuela, y Costa Rica. Tenemos el firme objetivo de que las personas en todo el mundo se sientan empoderadas para realizar cualquier actividad que se propongan independientemente de su condición geográfica o social, basados en un sistema de producción distribuida, una plataforma de diseño en la nube y una red de apoyo que convoca y fortalece el espíritu de superación.</p>
+                        <p><strong>Buscan:</strong> Ingeniería Civil Industrial (Práctica), Ingeniería Civil en Computación (Práctica).</p>
+                        <a href="http://takeahand.co/" target="_blank" class="btn btn-primary btn-sm" role="button">Página web</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="thumbnail with-caption">
+                      <img src="{% static 'site/img/web_simpliroute.png' %}">
+                      <div class="caption">
+                        <h4>SimpliRoute</h4>
+                        <p>SimpliRoute es la revolución en optimización de rutas e inteligencia en logística. Nuestra plataforma en la nube le permite a nuestros clientes reducir hasta un 30% sus costos logísticos gracias a nuestros geniales algoritmos de optimización (si, el vendedor viajero sirven en la vida real).  Somos una de las startups más exitosas del ambiente nacional con operación en Chile y Brasil así como fuimos parte de 500 Startups, una de las aceleradores más importantes de Silicon Valley. Si quieres un desafío de alto nivel y que va a cambiar el mundo del transporte urbano mundial, te esperamos para ser parte de nuestro equipo.</p>
+                        <p><strong>Buscan:</strong> Ingenieros Civiles en Computación, Industrias y Matemáticas (Práctica II, III y Fulltime).</p>
+                        <a href="http://www.simpliroute.com" target="_blank" class="btn btn-primary btn-sm" role="button">Página web</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="thumbnail with-caption">
+                      <img src="{% static 'site/img/web_granada.png' %}">
+                      <div class="caption">
+                        <h4>Granada</h4>
+                        <p>Granada es una organización que impulsa y apoya proyectos con altos niveles de impacto en la realidad chilena. La herramienta principal para potenciar estos proyectos es el trabajo conjunto y multidisciplinario de personas comprometidas con la transformación del país. Apoyamos a estos proyectos de distintas maneras, entregando conocimientos técnicos, apoyo organizacional  y estándares de competitividad necesarios para implementarlos. Todo lo anterior enfocado en el desarrollo de estrategias sustentables e inclusivas. Existen tres líneas paralelas de trabajo en Granada: Fondo concursable, Ecosistema y Asesorías.</p>
+                        <a href="http://www.proyectogranada.cl" target="_blank" class="btn btn-primary btn-sm" role="button">Página web</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+	      <!-- Fila 4 Mañana -->
+	      <div class="row">
+                  <div class="col-md-4">
+                    <div class="thumbnail with-caption">
+                      <img src="{% static 'site/img/web_excited.png' %}">
+                      <div class="caption">
+                        <h4>Excited <small>OpenLab</small></h4>
+                        <p> EXCITED es la primer tienda online dirigida a la comunidad LGBT (Lesbian, Gay, Bisexual, Trans). Con una increíble selección de productos, discreción de compra, excelente servicio, comunicación dirigida y una interfaz amigable creando comunidad queremos enamorar a nuestros clientes. Queremos formar la pink zone virtual más grande del mundo.</p>
+                        <p><strong>Buscan:</strong>Ingeniería Civil en Computación (Práctica II, Partime y Fulltime).</p>
+                        <a href="http://www.excited.com.mx" target="_blank" class="btn btn-primary btn-sm" role="button">Página web</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="thumbnail with-caption">
+                      <img src="{% static 'site/img/web_redalmacen.png' %}">
+                      <div class="caption">
+                        <h4>Red Almacen <small>Socialab</small></h4>
+                        <p>RedAlmacén es una plataforma de apoyo integral para los pequeños comerciantes, creada e idea por almaceneros, que les entrega tecnología de punta, soporte técnico, capacitaciones permanentes y las herramientas necesarias para mejorar el desempeño de su negocio, la competitividad y la calidad de vida de los almaceneros. Promovemos la asociatividad y el empoderamiento de los pequeños comerciantes.</p>
+                        <p><strong>Buscan:</strong> Ingeniería Civil en Computación (Desarrollador de aplicaciones web)</p>
+                        <a href="http://www.redalmacen.com" target="_blank" class="btn btn-primary btn-sm" role="button">Página web</a>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+	   </div>
+
+              <!-- TARDE -->
+              <div class="tab-pane fade" id="tarde">
+
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="thumbnail with-caption">
+                      <img src="{% static 'site/img/web_startupchile_v3.png' %}">
+                      <div class="caption">
+                        <h4>Start-Up Chile Operations</h4>
+                        <p>Aceleradora Pública que busca atraer startups globales a Chile, para transformarlo en un polo de innovación a nivel mundial.</p>
+                        <p><strong>Buscan:</strong> Ingeniería Civil en Computación (Práctica I, Práctica II, Práctica III).</p>
+                        <a href="http://www.startupchile.org" target="_blank" class="btn btn-primary btn-sm" role="button">Página web</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="thumbnail with-caption">
+                      <img src="{% static 'site/img/web_lazarillo.png' %}">
+                      <div class="caption">
+                        <h4>Lazarillo <small>OpenLab</small></h4>
+                        <p>Lazarillo es una aplicación guía para personas ciegas o con baja visión, que busca mejorar la autonomía e inclusión de las personas en situación de discapacidad visual.</p>
+                        <p><strong>Buscan:</strong> Ingeniería Civil en Computación (Práctica II), Ingeniería Civil Industrial (Práctica I y II).</p>
+                        <a href="https://www.lazarillo.cl/" target="_blank" class="btn btn-primary btn-sm" role="button">Página web</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="thumbnail with-caption">
+                      <img src="{% static 'site/img/web_centronegocios.png' %}">
+                      <div class="caption">
+                        <h4>Centro de Desarrollo de Negocios San Bernardo</h4>
+                        <p>El Centro de Desarrollo de Negocios (CDN) es un lugar donde las pequeñas empresas y emprendedores, hombre y mujeres, reciben asesoría técnica, individual y sin costo para el cliente, a través de mentores expertos, para fortalecer sus capacidades y desarrollar su actividad empresarial.​ Pertenece a la RED de 50  Centros de Desarrollo de Negocios, el cual es una medida Presidencial, ratificado en la Agenda de Productividad, Innovación y Crecimiento, ejecutado por el Servicio de Cooperación Técnica, Sercotec. El CDN de San Bernardo es operado por la Corporación Construyendo Mis Sueños en alianza con la Universidad de Chile.</p>
+                        <p><b>Buscan:</b> Ingeniería Civil Industrial, Química, Mecánica, Eléctrica (Práctica y Memoria)</p>
+                        <a href="http://www.centroschile.cl/" target="_blank" class="btn btn-primary btn-sm" role="button">Página web</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="thumbnail with-caption">
+                      <img src="{% static 'site/img/web_lentesplus.png' %}">
+                      <div class="caption">
+                        <h4>Lentesplus <small>Start-Up Chile</small></h4>
+                        <p>Lentesplus es la primera tienda en línea de lentes de contacto de Latino América. Ofrecemos las mejores marcas de Lentes de Contacto con el mejor precio del mercado, la mayor disponibilidad y la mejor conveniencia para el cliente final. Lentesplus nace precisamente de la necesidad de sus fundadores por encontrar Lentes de Contacto de calidad a un precio asequible y de una manera rápida.</p>
+                        <p><strong>Buscan:</strong> Ingeniería Civil en Computación, Ingeniería Civil Industrial, Ingeniería Civil Matemática (Práctica I, II y III</p>
+                        <a href="https://www.lentesplus.com" target="_blank" class="btn btn-primary btn-sm" role="button">Página web</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="thumbnail with-caption">
+                      <img src="{% static 'site/img/web_dart.png' %}">
+                      <div class="caption">
+                        <h4>DART by teledx.org <small>OpenLab</small></h4>
+                        <p>DART by teledx.org es un servicio basado en web que apunta a detectar automáticamente signos de enfermedades de retina en imágenes digitales usando inteligencia artificial para prevenirlas en etapas tempranas.</p>
+                        <p><strong>Busca:</strong> Matemáticos, Computación, Eléctrica, Industrias (práctica y memoria)</p>
+                        <a href="https://www.teledx.org" target="_blank" class="btn btn-primary btn-sm" role="button">Página web</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="thumbnail with-caption">
+                      <img src="{% static 'site/img/web_octopus.png' %}">
+                      <div class="caption">
+                        <h4>Octopus</h4>
+                        <p>iQVi es una aplicación que te entrega las herramientas para crear y compartir tus propios contenidos usando tecnología de Realidad Aumentada y Realidad Virtual, para computadores y móviles.</p>
+                        <p><strong>Buscan:</strong> Ingeniero Civil en Computación (Práctica II) e Ingeniero Civil Eléctrica (Práctica II)</p>
+                        <a href="http://www.iqvi.cl" target="_blank" class="btn btn-primary btn-sm" role="button">Página web</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="thumbnail with-caption">
+                      <!-- <img src="{% static 'site/img/web_lentesplus.png' %}"> -->
+                      <div class="caption">
+                        <h4>Inovasystem SPA <small>OpenLab</small></h4>
+                        <p>Empresa joven de sistemas innovadores que utiliza la innovación inversa en la creación de equipos electrónicos para la seguridad, máquinas electrónicas para el entretenimiento y máquinas para la rehabilitación en el ámbito social.</p>
+                        <p><strong>Buscan:</strong> Ingeniería Civil Eléctrica (Práctica I y II)</p>
+                        <!-- <a href="https://www.lentesplus.com" target="_blank" class="btn btn-primary btn-sm" role="button">Página web</a> -->
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="thumbnail with-caption">
+                      <!-- <img src="{% static 'site/img/web_lentesplus.png' %}"> -->
+                      <div class="caption">
+                        <h4>InngenioT Spa</h4>
+                        <p>Servicios de consultoria y ejecución de proyectos para el monitoreo, análisis y gestión de la huella de carbono y huella hídrica del un producto o servicio que desarrollan  pymes y empresas, con el fin de disminuir costos de energía, tratamientos de residuos y ser competitivos en los nuevos mercados en los cuales se exigen la medición y políticas de gestión sustentables para la disminución de la huella de carbono e hídrica en sus negocios.</p>
+                        <p><strong>Buscan:</strong> Ingeniero Civil mención Hidráulica, Sanitaria y Ambiental, Ingeniero Civil en Computación e Ingeniero Civil Químico (Práctica, Trabajo)</p>
+                        <!-- <a href="https://www.lentesplus.com" target="_blank" class="btn btn-primary btn-sm" role="button">Página web</a> -->
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="thumbnail with-caption">
+                      <img src="{% static 'site/img/web_licitacionesinteligentes.png' %}">
+                      <div class="caption">
+                        <h4>Licitaciones Inteligentes <small>Start-Up Chile</small></h4>
+                        <p>Somos una empresa que se dedica a ayudarle al sector privado a venderle al gobierno.</p>
+                        <p><strong>Buscan:</strong> Ingeniería Civil en Computación, Ingeniería Civil Industrial, Ingeniería Civil Matemática (Práctica III, Trabajo part-time)</p>
+                        <a href="https://www.licitacionesinteligentes.com" target="_blank" class="btn btn-primary btn-sm" role="button">Página web</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+		              <div class="col-md-4">
+                    <div class="thumbnail with-caption">
+                      <img src="{% static 'site/img/web_freshwater.png' %}">
+                      <div class="caption">
+                        <h4>FreshWater <small>SocialLab</small></h4>
+                        <p>FreshWater busca mejorar la calidad de vida de las personas que se encuentran localizadas en zonas remotas sin agua potable para beber o de mala calidad acelerando el ciclo natural del agua, al capturar las micro partículas de agua que se encuentran suspendidas en la humedad relativa, para luego formar una nube y hacer llover, obteniendo agua prístina que pasa posteriormente por un proceso de filtrado, purificación y esterilización, pudiendo obtener hasta 28 litros de agua purificada por día.</p>
+                        <p><strong>Buscan:</strong> Ingeniería Civil Electríca (Práctica I y II), Ingeniería Civil Mecánica (Práctica I, II).</p>
+                        <a href="http://www.freshwatersolutions.org/" target="_blank" class="btn btn-primary btn-sm" role="button">Página web</a>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="col-md-4">
+                    <div class="thumbnail with-caption">
+                      <img src="{% static 'site/img/web_evoting.png' %}">
+                      <div class="caption">
+                        <h4>EVoting <small></small></h4>
+                        <p>EVoting es un emprendimiento que ofrece una solución de votación electrónica remota, cambiando la tradicional urna y votación a papel, por un sistema de votación por internet. <br><br>Nació el 2013, su fundador y gran parte de quienes integran EVoting han estudiado o estudian actualmente en Beauchef.</p>
+                        <p><strong>Busca: </strong>Estudiantes de 4to año en adelante para trabajo part-time.</p>
+                        <a href="http://www.evoting.cl/" target="_blank" class="btn btn-primary btn-sm" role="button">Página web</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+    </div>
+    </section>
+
+{% endblock container %}
+
+{% block scripts %}
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../static/bootstrap/js/jquery.min.js"><\/script>')</script>
+<script src="{% static 'tron/js/vendor/bootstrap.min.js' %}"></script>
+<script src="{% static 'tron/js/vendor/smoothscroll.js' %}"></script>
+<script src="{% static 'tron/js/tron-ui.js' %}"></script>
+<script src="{% static 'tron/js/demo.js' %}"></script>
+<script src="{% static 'tron/outdatedbrowser/outdatedbrowser.min.js' %}"></script>
+<script src="{% static 'tron/outdatedbrowser/outdatedbrowser.init.js' %}"></script>
+
+
+{% endblock scripts %}

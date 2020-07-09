@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block title %}{{ block.super }}Error{% endblock %}
+
+{% block navbar-left %}
+  {% include "_navbar.html" with active_link="empresa" %}
+{% endblock %}
+
+
+
+{% block container %}
+
+    <section class="demo-page padding-bottom-2x">
+      <div class="container">
+          <h1 class="text-primary">Ups Algo salió mal :( !</h1>
+
+      </div>
+    </section>
+
+{% endblock container %}
+
+
+{% block scripts %}
+
+{% endblock scripts %}

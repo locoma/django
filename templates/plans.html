@@ -1,0 +1,366 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block title %}{{ block.super }}About{% endblock %}
+
+{% block navbar-left %}
+  {% include "_navbar.html" with active_link="plans" %}
+{% endblock %}
+
+<!-- Benefits of the Django application -->
+{% block container %}
+
+<div class = "container"  style = "padding-top:7%;">
+
+	<div class = "row">
+		<div class ="page-header">
+			<h1><font color="#009fe3"> Nuestros Servicios </font></h1>
+		</div>
+	</div>
+	<div class ="row">
+		<ul class="nav nav-tabs" role="tablist">
+			<li role="presentation" class="active"><a href="#ejecutivo" aria-controls="ejecutivo" role="tab" data-toggle="tab"><h4>Ejecutivo Feria</h4></a></li>
+			<li role="presentation"><a href="#plataforma" aria-controls="plataforma" role="tab" data-toggle="tab"><h4>Plataforma Laboral</h4></a></li>
+			<li role="presentation"><a href="#desayuno" aria-controls="desayuno" role="tab" data-toggle="tab"><h4>Desayuno Alumnos</h4></a></li>
+			<li role="presentation"><a href="#branding" aria-controls="branding" role="tab" data-toggle="tab"><h4>Branding y Difusión </h4></a></li>
+		</ul>
+
+		<div class="tab-content" style = "height:500px;">
+
+			<div role="tabpanel" class="tab-pane active" id="ejecutivo">
+				<table class ="table">
+					<tr>
+						<td>
+							<h2><font color="#009fe3">Ejecutivo Feria</font></h2>
+							<h4>
+								<p>Es importante agregar que se designa un Ejecutivo Comercial, con quien usted podrá contar <b>durante todo el año </b> (antes, durante y después de la Feria Empresarial), quién lo ayudará en todos los requerimientos que su empresa tenga, ya sea de nuestros alumnos, como de la actividad Feria. </p>
+
+								<p> A través de este ejecutivo pretendemos estrechar los lazos con su empresa durante todo el año, para de esta manera ir desarrollando actividades en conjunto que beneficien tanto a su empresa como a nuestros alumnos. </p>
+							</h4>
+						</td>
+						<td>
+							<img src="{% static 'site/img/plans/ejecutivo.jpg' %}" style="height:50%;">
+						</td>
+					</tr>
+				</table>
+			</div>
+
+			<div role="tabpanel" class="tab-pane" id="plataforma">
+
+				<h2><font color="#009fe3">Plataforma Laboral</font></h2>
+
+				<p><h4>Esta nueva iniciativa está enfocada en que su empresa pueda tener llegada a nuestros alumnos durante todo el año por medio de publicaciones de ofertas de trabajo o prácticas profesionales.</h4><p>
+
+				<p><h4>Dentro de la Plataforma, la empresa puede:</h4></p>
+
+				<table class ="table">
+					<tr>
+						<td style="text-align:center;color:#009fe3;">
+							<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+						</td>
+						<td>
+							<p><h4>Publicar sus ofrecimientos de práctica profesional, trabajos part-time o full time.</h4></p>
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align:center;color:#009fe3;">
+							<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+						</td>
+						<td>
+							<p><h4>Descargar de forma fácil los CVs de los postulantes para hacer más ágiles los procesos.</h4></p>
+						</td>
+					</tr>
+				</table>
+
+				<p><h4>La publicación de ofertas laborales es <b><u>gratuita*</u></b>.</h4></p>
+
+				<p><h4>También ofrecemos un Informe anual con datos estratégicos respecto a preferencias e intereses laborales de los asistentes a la Feria sólo disponible para aquellas empresas que contraten planes (Preferencial Plus y Preferencial).</h4></p>
+
+				<p><h4> * Máximo 2 publicaciones en el año, con un máximo de 30 días hábiles en línea. Al contratar los planes Preferencial Plus o Preferencial, la cantidad de ofertas es ilimitada.</h4></p>
+			</div>
+
+			<div role="tabpanel" class="tab-pane" id="desayuno">
+
+				<h2><font color="#009fe3">Desayuno Alumnos</font></h2>
+				<h4>
+					<p>El concepto de Desayuno Alumnos viene a complementar nuestro sistema de Charlas. La idea es que las empresas puedan seguir dándose a conocer a nuestro alumnos pero en un ambiente más cercano y en horario más cómodo para los alumnos.</p>
+
+					<p>Este servicio incluye la promoción del evento vía mail , más avisos en la página web para la difusión del evento, además de publicarlo en todas nuestras redes sociales.</p>
+
+
+					<table class ="table">
+						<tr>
+							<td>
+							</td>
+							<td>
+								<p>Coffee Break para charlistas y alumnos (Café y galletas). Se realizarán durante los horarios liberados para los alumnos de las diferentes carreras y serán fijada en conjunto con su ejecutivo y con anterioridad. </p>
+
+							</td>
+						</tr>
+					</table>
+
+					<table class ="table">
+						<tr>
+							<td>
+							</td>
+							<td>
+								<p>La empresa tendrá a disposición una sala multimedia con computador, proyector para mostrar presentaciones, videos, etc. Equipo de audio y amplificación inalámbrica.</p>
+							</td>
+
+						</tr>
+					</table>
+
+					<table class ="table">
+						<tr>
+							<td>
+							</td>
+							<td>
+								<p>Información motivacional y dinámica, que de a conocer la empresa, lo que realizan, sus proyectos, las alternativas para los alumnos, su importancia a nivel nacional e internacional y que sean muy cercanos a los alumnos y resuelvan sus dudas e inquietudes.</p>
+							</td>
+
+						</tr>
+					</table>
+				</h4>
+			</div>
+
+			<div role="tabpanel" class="tab-pane" id="branding">
+
+				<h2><font color="#009fe3">Branding y Difusión de Actividades</font></h2>
+				<h4>
+					<p>Feria Empresarial ofrece servicios adicionales a empresas que tengan mayores necesidades de acceder a los alumnos de la Facultad. Entre estos servicios se encuentran:</p>
+
+
+
+					<li> <p><b>Branding:</b> logo en el Newsletter mensual de la Feria Empresarial que se difunde en el sitio de la Feria, en el Foro Institucional de la Facultad , redes sociales y mailing a los inscritos.</p> </li>
+					<li> <p><b>Difusión de actividades organizadas por la empresa de interés para los estudiantes </b>(por ejemplo desayunos o charlas en la empresa). Esto incluye afiches, mailing y publicaciones por las distintas plataformas. </p> </li>
+
+				<table class ="table" style="width:90%;margin-left:auto;margin-right:auto;">
+					<tr>
+						<td>
+							<img src="{% static 'site/img/plans/pagferi.png' %}" style="width:100%;">
+						</td>
+						<td>
+							<img src="{% static 'site/img/plans/redes.png' %}" style="width:100%;">
+						</td>
+					</tr>
+				</table>
+			</h4>
+			</div>
+		</div>
+	</div>
+
+
+	<div class ="row">
+		<div class ="page-header">
+			<h1><font color="#009fe3">Participación en la Feria</font></h1>
+		</div>
+	</div>
+
+	<div class ="row">
+		<p><h4>Durante los días <font color ="#009fe3">3, 4, 5 y 6 de Octubre </font> del presente año, cada empresa agenda un <u>único</u> día para recibir CVs, entregar información de la empresa y sus sistemas de selección, en las dependencias de nuestra Facultad. También pueden acceder <u>sin costo adicional</u> a nuestro <b>sistema de asignación de entrevistas</b>, donde los alumnos pueden solicitar entrevistas de 30 minutos y el sistema realiza la organización de la agenda. </h4></p>
+		<br>
+		<br>
+		<img src="{% static 'site/img/plans/feriaej.jpg' %}" style="width:100%;">
+	</div>
+	<br>
+	<div class ="row" style="text-align:center;">
+		<div class ="page-header">
+			<h2><font color="#009fe3">Stands</font></h2>
+		</div>
+
+		<p><h4>Este día, su empresa tendrá a disposición los siguientes materiales, infraestructura y servicios: </h4></p>
+	</div>
+
+	<br>
+	<div class ="row" style="text-align:center;">
+		<table class ="table" style="width:80%;margin-left:auto;margin-right:auto;">
+			<tr>
+				<td><img src="{% static 'site/img/plans/cubo.png' %}" ></td>
+				<td> <h4>Cubículo con capacidad para dos entrevistadores y entrevistados, con potencia máxima de 300 Watts.</h4></td>
+			</tr>
+		</table>
+	</div>
+
+	<br>
+	<div class ="row" style="text-align:center;">
+		<table class ="table" style="width:80%;margin-left:auto;margin-right:auto;">
+			<tr>
+				<td><h3><font color="#009fe3">Stand Simple (8,7 m2)<h3></td>
+				<td><h3><font color="#009fe3">Stand Doble (17,5 m2)</h3></td>
+			</tr>
+
+			<tr>
+				<td><img src="{% static 'site/img/plans/stand_simple.png' %}" style="width:80%;"></td>
+				<td><img src="{% static 'site/img/plans/stand_doble.png' %}" style="width:80%;"></td>
+			</tr>
+		</table>
+	</div>
+
+	<br>
+	<div class ="row" style="text-align:center;">
+		<div class ="page-header">
+			<h2><font color="#009fe3">Otras consideraciones</font></h2>
+		</div>
+		<br>
+
+		<h4>Este día, su empresa tendrá a disposición los siguientes materiales, infraestructura y servicios:	</h4>
+	</div>
+	<br>
+	<div class ="row" style="text-align:center;">
+
+
+		<table class ="table" style="width:80%;margin-left:auto;margin-right:auto;">
+			<tr>
+				<td><img src="{% static 'site/img/plans/desk.png' %}" >  </td>
+				<td><h4>Dos escritorios y un mueble con llave (si la empresa lo prefiere, puede traer sus propios escritorios).</h4></td>
+			</tr>
+			<tr>
+				<td><img src="{% static 'site/img/plans/articulos.png' %}" >  </td>
+				<td><h4>Artículos de oficina necesarios.</h4></td>
+			</tr>
+			<tr>
+				<td><img src="{% static 'site/img/plans/food.png' %}" >  </td>
+				<td><h4>Desayuno, almuerzo y coffee-break.</h4></td>
+			</tr>
+			<tr>
+				<td><img src="{% static 'site/img/plans/security.png' %}" >  </td>
+				<td><h4>Seguridad durante el evento.</h4></td>
+			</tr>
+			<tr>
+				<td><img src="{% static 'site/img/plans/internet.png' %}" >  </td>
+				<td><h4>Internet.</h4></td>
+			</tr>
+			<tr>
+				<td><img src="{% static 'site/img/plans/asistente.png' %}" >  </td>
+				<td><h4>Un asistente encargado de coordinar.</h4></td>
+			</tr>
+		</table>
+	</div>
+	<br>
+	<div class = "row">
+		<div class ="page-header">
+			<h1><font color="#009fe3">Planes Feria Empresarial 2016</font></h1>
+		</div>
+	<h4>
+		<table class ="table" style="width:90%;margin-left:auto;margin-right:auto;">
+
+			<th bgcolor="#009fe3" style="vertical-align:middle;"><h3><font color="white">Servicios</font></h3></th>
+			<th style="text-align:center;vertical-align:middle;" bgcolor="#009fe3"><h3><font color="white">Preferencial Plus</font></h3></th>
+			<th style="text-align:center;vertical-align:middle;" bgcolor="#009fe3"><h3><font color="white">Preferencial</font></h3></th>
+			<th style="text-align:center;vertical-align:middle;" bgcolor="#009fe3"><h3><font color="white">Básico</font></h3></th>
+
+			<tr>
+				<td>Stand Feria</td>
+				<td style="text-align:center;color:#009fe3;">
+					<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+				</td>
+				<td style="text-align:center;color:#009fe3;">
+					<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+				</td>
+				<td style="text-align:center;color:#009fe3;">
+					<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+				</td>
+			</tr>
+			<tr>
+				<td>Ejecutivo Feria</td>
+				<td style="text-align:center;color:#009fe3;">
+					<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+				</td>
+				<td style="text-align:center;color:#009fe3;">
+					<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+				</td>
+				<td style="text-align:center;color:#009fe3;">
+					<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+				</td>
+			</tr>
+
+				<td>Plataforma Laboral (full)</td>
+				<td style="text-align:center;color:#009fe3;">
+					<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+				</td>
+				<td style="text-align:center;color:#009fe3;">
+					<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+				</td>
+				<td style="text-align:center;color:red;">
+					<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+				</td>
+			</tr>
+			<tr>
+				<td>Pre-selección candidatos</td>
+				<td style="text-align:center;color:#009fe3;">
+					<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+				</td>
+				<td style="text-align:center;color:#009fe3;">
+					<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+				</td>
+				<td style="text-align:center;color:red;">
+					<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+				</td>
+			</tr>
+			<tr>
+				<td>Desayuno Alumnos</td>
+				<td style="text-align:center;color:#009fe3;">
+					<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+				</td>
+				<td style="text-align:center;color:red;">
+					<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+				</td>
+				<td style="text-align:center;color:red;">
+					<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+				</td>
+			</tr>
+			<tr>
+				<td>Branding y Difusión</td>
+				<td style="text-align:center;color:#009fe3;">
+					<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+				</td>
+				<td style="text-align:center;color:red;">
+					<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+				</td>
+				<td style="text-align:center;color:red;">
+					<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+				</td>
+			</tr>
+
+			<tr style="background-color:#009fe3;opacity: 0.6;filter: alpha(opacity=60);">
+
+				<td> <b>Precio Stand Simple</b></td>
+				<td style="text-align:center;"><b>59 UF</b></td>
+				<td style="text-align:center;"><b>44 UF</b></td>
+				<td style="text-align:center;"><b>39 UF</b></td>
+
+			</tr>
+			<tr style="background-color:#009fe3;opacity: 0.6;filter: alpha(opacity=60);">
+
+				<td><b>Precio Stand Doble</b></td>
+				<td style="text-align:center;"><b>96 UF</b></td>
+				<td style="text-align:center;"><b>81 UF</b></td>
+				<td style="text-align:center;"><b>76 UF</b></td>
+
+			</tr>
+		</table>
+	</h4>
+	</div>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+{% endblock container %}
+
+<script type="text/javascript">
+    jQuery(document).ready(function ($) {
+        $('#tabs').tab();
+    });
+
+</script>

@@ -1,0 +1,138 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block title %}{{ block.super }}Inicio{% endblock %}
+
+{% block styles %}
+    <link href="{% static 'tron/examples/landing/landing.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block navheader %}
+    <header class="navbar navbar-transparent navbar-fixed-top navbar-centered-nav navbar-animated">
+{% endblock %}
+
+{% block navbar-left %}
+  {% include "_navbar.html" with active_link="home" %}
+{% endblock %}
+
+
+
+{% block logolight %}
+    <img src="{% static 'tron/img/logo-light-new.png' %}" width="195" height="60">
+{% endblock %}
+
+
+{% block splash %}
+    <!-- Intro Section -->
+    <section class="intro" style="background-image: url(/static/tron/img/banner.jpg)" id="home">
+      <div class="overlay"></div>
+      <span></span>
+      <div class="container">
+
+        
+        <img src="{% static 'tron/img/foto-fechas.jpg' %}" class="img-responsive center-block img-rounded" style="padding-bottom:20px;" width="700">
+
+        <div class="row text-center">
+	  <!--
+          <form action="{% url 'interships:list' %}">
+            <input type="submit"  class="btn btn-danger"  value="Para realizar reservas ¡HAZ CLICK AQUÍ!" />
+          </form>
+   	  -->
+          <!--
+          <form action="{% url 'asistentes' %}">
+            <input type="submit"  class="btn btn-warning"  value="¿QUIÉRES SER ASISTENTE DE EMPRESA? ¡PARA ISCRIBIRTE ¡HAZ CLICK AQUÍ!" />
+          </form>-->
+        </div>
+
+        <!--div class="alert alert-info text-center" width="300" height="100" align="center"><strong>8, 9 y 10 de Octubre de 2018</strong></div-->
+        <button class="btn btn-primary">Beauchef 851, Santiago</button>
+  
+      </div>
+    </section>
+    <!-- Intro Section End -->
+{% endblock splash %}
+
+{% block container %}
+<!-- Benefits of the Django application -->
+
+    <!-- Features -->
+    <section class="container features" id="features">
+
+        </div>
+
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="icon"><i class="fa fa-briefcase" aria-hidden="true" style="color:#189cd8;"></i></div>
+          <h3>Feria Laboral FCFM</h3>
+          <p>La Feria Laboral FCFM se realizará en Octubre de 2018 en Beauchef 851, Santiago Centro.</p>
+            <p><a href="{% url 'about' %}" role="button" class="btn btn-info">Más información</a></p>
+        </div>
+        <div class="col-sm-4">
+          <div class="icon"><i class="fa fa-graduation-cap" aria-hidden="true" style="color:#189cd8;"></i></div>
+          <h3>Estudiantes / Egresados</h3>
+          <p>Conoce los servicios que entregamos tanto a estudiantes como a egresados de la Escuela de Ingeniería y Ciencias de la UChile</p>
+            <p><a href="{% url 'estudiante' %}" role="button" class="btn btn-info">Área Estudiantes</a></p>
+        </div>
+        <div class="col-sm-4">
+          <div class="icon"><i class="fa fa-building" aria-hidden="true" style="color:#189cd8;"></i></div>
+          <h3>Empresas / Organizaciones / Instituciones</h3>
+          <p>Conoce los servicios que entregamos a empresas, organizaciones e instituciones.</p>
+            <p><a href="{% url 'empresa' %}" role="button" class="btn btn-info">Área Empresas</a></p>
+        </div>
+      </div>
+    </section><!-- Features End -->
+
+
+        <!-- Info Block 1 -->
+    <section class="container" id="info-block-1">
+        
+    <hr class="space-top-2x">
+      <div class="row">
+        <div class="col-sm-6 col-sm-push-6">
+          <img class="img-responsive" src="{% static 'tron/img/portada1.jpg' %}" alt="Info Block 1">
+        </div>
+        <div class="col-sm-6 col-sm-pull-6">
+          <div class="block-header">
+            <h2><small>Feria Laboral</small>Feria Laboral FCFM (ex Feria Empresarial)</h2>
+          </div>
+          <p>El 8, 9 y 10 de Octubre, se realizará la Feria Laboral FCFM de la Escuela de Ingeniería y Ciencias de la Universidad de Chile. El evento se llevará a cabo en las dependencias de la Escuela ubicada en Beauchef 851, Santiago Centro.</p>
+            <p>Esta feria está enfocada en las 9 especialidades de Ingeniería Civil de la Escuela, Geología y en todos los niveles de práctica, memorias de título y trabajo.</p>
+            <p><div class="alert alert-info text-center"><a href="{% url 'interships:list' %}">Ver empresas participantes</a></div></p>
+        </div>
+      </div>
+    </section><!-- Info Block 1 End -->
+
+    <!-- Info Block 2 -->
+    <!--section class="container" id="info-block-2">
+      <hr class="space-top-2x space-bottom-2x">
+      <div class="row">
+        <div class="col-sm-6 col-sm-push-6">
+            <div class="block-header">
+                <h2><small>Eventos durante el año</small>Semana de Preparación Laboral</h2>
+            </div>
+              <p>El año pasado realizamos la primera "Semana de Preparación del Practicante" con gran éxito. Este año, y con un nuevo nombre, tenemos planificado realizar dos <b>Semana de Preparación Laboral</b>, una en agosto y una en noviembre, para ayudar a nuestros estudiantes a prepararse para enfrentar una entrevista de trabajo y dar este salto al mundo laboral.</p>
+              <p>¡No te pierdas la primera Semana de Preparación Laboral entre el 5 y 9 de septiembre!</p>
+              <p><div class="alert alert-danger text-center"><a href="{% url 'spl' %}">Ver actividades</a></div></p>
+            </div>
+
+        <div class="col-sm-6 col-sm-pull-6">
+            <img class="img-responsive" src="{% static 'tron/img/portada2.jpg' %}" alt="Semana de Preparación Laboral">
+        </div>
+      </div>
+
+    <hr class="space-top-2x space-bottom-2x">
+    </section><!-- Info Block 2 End -->
+
+    <!-- Additional spaces -->
+    <div class="space-bottom-2x visible-sm-block visible-xs-block"></div>
+    <div class="padding-top visible-xs-block"></div>
+
+{% endblock container %}
+
+{% block scripts %}
+<script src="{% static 'tron/js/vendor/bootstrap.min.js' %}"></script>
+<script src="{% static 'tron/examples/landing/landing.js' %}"></script>
+{% endblock scripts %}
+

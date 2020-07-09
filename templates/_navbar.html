@@ -1,0 +1,81 @@
+<li class="dropdown  {% if active_link == 'about' or active_link == 'team' %} active {% endif %}" >
+    <a class="dropdown-toggle" data-toggle="dropdown" role="button" href="#">Sobre nosotros<span class="caret"></span></a>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
+      <li {% if active_link == 'about' %}class="active" {% endif %}><a role="menuitem" href="{% url 'about' %}">Información general</a></li>
+     <!-- <li {% if active_link == 'feria2016' %}class="active" {% endif %}><a role="menuitem" href="{% url 'feria2016' %}">Feria Laboral FCFM</a></li>-->
+    <!--<li {% if active_link == 'empresasactuales' %}class="active" {% endif %}><a role="menuitem" href="{% url 'interships:list' %}">Reservas de entrevistas</a></li>-->
+      <li class="divider"></li>
+      <li {% if active_link == 'team' %}class="active" {% endif %}><a role="menuitem" href="{% url 'team' %}">Equipo</a></li>
+      <!--li {% if active_link == 'spl' %}class="active" {% endif %}><a role="menuitem" href="{% url 'spl' %}">Semana Preparación Laboral</a></li-->
+      <li {% if active_link == 'empresasanteriores' %}class="active" {% endif %}><a role="menuitem" href="{% url 'companies:empresas' %}">Versiones Anteriores</a></li>
+    </ul>
+
+<li class="dropdown  {% if active_link == 'estudiante' or active_link == 'interships' %} active {% endif %}" >
+    <a class="dropdown-toggle" data-toggle="dropdown" role="button" href="#">Área Estudiantes<span class="caret"></span></a>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="drop2">
+        <li {% if active_link == "estudiante" %}class="active"{% endif %}><a role="menuitem" href="{% url 'estudiante' %}">Información general</a></li>
+        <li {% if active_link == "interships" %}class="active"{% endif %}><a role="menuitem" href="{% url 'interships:list' %}">Sistema de Reservas</a></li>
+        <!--<li {% if active_link == 'asistentes' %}class="active" {% endif %}><a role="menuitem" href="{% url 'asistentes' %}">Inscripción Asistentes</a></li>-->
+        <!--<li {% if active_link == 'charlas' %}class="active" {% endif %}><a role="menuitem" href="{% url 'charlas' %}">Inscripción Charlas</a></li>-->
+        <li {% if active_link == 'encuentros' %}class="active" {% endif %}><a role="menuitem" href="{% url 'encuentros' %}">Inscripción Encuentros</a></li>
+        <li {% if active_link == 'concurso' %}class="active" {% endif %}><a role="menuitem" href="{% url 'concurso' %}">Preguntas Frecuentes</a></li>-
+    </ul>
+
+{% if not user.is_authenticated %}
+    <li {% if active_link == "empresa" %}class="active"{% endif %}><a href="{% url 'empresa' %}">Área Empresas</a></li>
+{% endif %}
+
+<li {% if active_link == "pl" %}class="active"{% endif %}><a href="{% url 'pl:plindex' %}">Plataforma Laboral</a></li>
+<li {% if active_link == "contacto" %}class="active"{% endif %}><a href="{% url 'contacto' %}">Contacto</a></li>
+<!-- <li {% if active_link == "news" %}class="active"{% endif %}><a href="{% url 'news:list' %}">Noticias</a></li> -->
+
+<style>
+
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu>.dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -6px;
+    margin-left: -1px;
+    -webkit-border-radius: 0 6px 6px 6px;
+    -moz-border-radius: 0 6px 6px;
+    border-radius: 0 6px 6px 6px;
+}
+
+.dropdown-submenu:hover>.dropdown-menu {
+    display: block;
+}
+
+.dropdown-submenu>a:after {
+    display: block;
+    content: " ";
+    float: right;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    border-left-color: #ccc;
+    margin-top: 5px;
+    margin-right: -10px;
+}
+
+.dropdown-submenu:hover>a:after {
+    border-left-color: #fff;
+}
+
+.dropdown-submenu.pull-left {
+    float: none;
+}
+
+.dropdown-submenu.pull-left>.dropdown-menu {
+    left: -100%;
+    margin-left: 10px;
+    -webkit-border-radius: 6px 0 6px 6px;
+    -moz-border-radius: 6px 0 6px 6px;
+    border-radius: 6px 0 6px 6px;
+}
+</style>

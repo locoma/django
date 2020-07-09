@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block title %}{{ block.super }}Plataforma Laboral{% endblock %}
+
+{% block styles %}
+<!-- Custom styles for this template -->
+<link href="../static/bootstrap/css/offcanvas.css" rel="stylesheet">
+<link href="{% static 'site/css/main.css' %}" rel="stylesheet">
+{% endblock styles %}
+<!-- Benefits of the Django application -->
+{% block container %}
+
+<div class="container">
+
+    <h1>{{ offer.company }}</h1>
+
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+    <ul>
+        <li>{{ offer.description }}</li>
+        <li>{{ offer.position }}</li>
+        <li>{{ offer.requeriments }}</li>
+        <li>{{ offer.place }}</li>
+        <li>{{  offer.length }}</li>
+        <li>{{  offer.type }}</li>
+        <li>{{  offer.degree }}</li>
+        <li>{{  offer.income }}</li>
+    </ul>
+
+</div>
+
+{% endblock container %}
+{% block scripts %}
+
+<script src="{% static 'site/js/site.js' %}"></script>
+
+{% endblock scripts %}
